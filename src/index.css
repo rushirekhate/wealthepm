@@ -1,0 +1,10 @@
+ 
+/* Core Web Vitals performance helpers */
+img, video { max-width: 100%; }
+img { height: auto; }
+.route-loader { min-height: 70vh; display: grid; place-items: center; background: #fff; }
+.route-loader span { width: 42px; height: 42px; border-radius: 999px; border: 3px solid rgba(0,0,0,.12); border-top-color: #b89136; animation: routeSpin .8s linear infinite; }
+@keyframes routeSpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .001ms !important; }
+}
