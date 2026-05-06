@@ -22,6 +22,10 @@ const Footer = () => {
                 <img
                   src="https://epmwealth.com/wp-content/uploads/2023/06/logo-emp.png"
                   alt="EPM Wealth"
+                  width="1200"
+                  height="700"
+                  loading="lazy"
+                  decoding="async"
                   className="luxury-footer-logo"
                 />
               </div>

@@ -430,14 +430,9 @@ const Home = () => {
   const activeData =
     awardsData.find((item) => item.year === activeYear) || awardsData[0];
 
-
-
-
-
   useEffect(() => {
     if (window.innerWidth <= 768) return;
     const ctx = gsap.context(() => {
-
       gsap.utils.toArray(".epm-reveal-section").forEach((section) => {
         gsap.fromTo(
           section,
@@ -728,13 +723,32 @@ const Home = () => {
       duration: 1.4,
       ease: "power2.out",
     })
-    .fromTo(
-      ".epm-hero-text-line",
-      { opacity: 0, y: 80, rotateX: -55, filter: "blur(12px)", transformOrigin: "50% 100%" },
-      { opacity: 1, y: 0, rotateX: 0, filter: "blur(0px)", duration: 1.1, stagger: 0.22 },
-      "-=0.8"
-    )
-    .call(() => { setShowTyped(true); }, null, "+=0.5");
+      .fromTo(
+        ".epm-hero-text-line",
+        {
+          opacity: 0,
+          y: 80,
+          rotateX: -55,
+          filter: "blur(12px)",
+          transformOrigin: "50% 100%",
+        },
+        {
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          filter: "blur(0px)",
+          duration: 1.1,
+          stagger: 0.22,
+        },
+        "-=0.8",
+      )
+      .call(
+        () => {
+          setShowTyped(true);
+        },
+        null,
+        "+=0.5",
+      );
   };
 
   useEffect(() => {
@@ -751,7 +765,10 @@ const Home = () => {
         charIdx++;
         setTypedText(line.slice(0, charIdx));
         if (charIdx === line.length) {
-          tid = setTimeout(() => { isDeleting = true; tick(); }, 1600);
+          tid = setTimeout(() => {
+            isDeleting = true;
+            tick();
+          }, 1600);
           return;
         }
         tid = setTimeout(tick, 45);
@@ -768,7 +785,10 @@ const Home = () => {
       }
     };
     tid = setTimeout(tick, 400);
-    return () => { cancelled = true; clearTimeout(tid); };
+    return () => {
+      cancelled = true;
+      clearTimeout(tid);
+    };
   }, [showTyped]);
 
   const handleSubscribe = async (e) => {
@@ -968,7 +988,7 @@ const Home = () => {
             muted
             playsInline
             preload="metadata"
-            poster="/videos/hero-poster.jpg"
+             poster="/poster.webp"
             onEnded={handleVideoEnd}
             onError={handleVideoEnd}
           />
@@ -978,10 +998,16 @@ const Home = () => {
         <div className="epm-hero-reveal-overlay" ref={revealOverlayRef}>
           <div className="epm-hero-3d-scene">
             <div className="epm-hero-3d-text" ref={heroTextRef}>
-              <span className="epm-hero-text-line epm-line-because">BECAUSE YOUR</span>
+              <span className="epm-hero-text-line epm-line-because">
+                BECAUSE YOUR
+              </span>
               <span className="epm-hero-text-line epm-line-wealth">WEALTH</span>
-              <span className="epm-hero-text-line epm-line-deserves">DESERVES</span>
-              <span className="epm-hero-text-line epm-line-excellence">EXCELLENCE</span>
+              <span className="epm-hero-text-line epm-line-deserves">
+                DESERVES
+              </span>
+              <span className="epm-hero-text-line epm-line-excellence">
+                EXCELLENCE
+              </span>
               {showTyped && (
                 <div className="epm-hero-typed-row">
                   <span className="epm-hero-typed-text">{typedText}</span>
@@ -994,10 +1020,42 @@ const Home = () => {
 
         {/* ── Social Links ── */}
         <div className="epm-social-stick">
-          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram" className="epm-social-btn"><FaInstagram /></a>
-          <a href="https://www.youtube.com/" target="_blank" rel="noreferrer" aria-label="Youtube" className="epm-social-btn"><FaYoutube /></a>
-          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook" className="epm-social-btn"><FaFacebookF /></a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="epm-social-btn"><FaLinkedinIn /></a>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram"
+            className="epm-social-btn"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Youtube"
+            className="epm-social-btn"
+          >
+            <FaYoutube />
+          </a>
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Facebook"
+            className="epm-social-btn"
+          >
+            <FaFacebookF />
+          </a>
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            className="epm-social-btn"
+          >
+            <FaLinkedinIn />
+          </a>
         </div>
       </section>
 
@@ -1163,6 +1221,10 @@ const Home = () => {
                   src={featuredArticle.image}
                   alt={featuredArticle.title}
                   className="vault-featured-image"
+                  width="1200"
+                  height="700"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="vault-featured-overlay"></div>
 
@@ -1188,6 +1250,10 @@ const Home = () => {
                     <img
                       src={item.image}
                       alt={item.title}
+                      width="1200"
+                      height="700"
+                      loading="lazy"
+                      decoding="async"
                       className={`vault-article-image ${
                         index === 0 ? "fit-image" : ""
                       }`}
@@ -1255,7 +1321,14 @@ const Home = () => {
               <div className="awards-horizontal-scroll-track">
                 {duplicatedGalleryImages.map((img, index) => (
                   <div className="awards-gallery-card" key={index}>
-                    <img src={img} alt={`Award gallery ${index + 1}`} loading="lazy" decoding="async" />
+                    <img
+                      src={img}
+                      alt={`Award gallery ${index + 1}`}
+                      width="1200"
+                      height="700"
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <div className="awards-gallery-card-overlay">
                       <span>EPM WEALTH</span>
                       <p>Recognition & Premium Milestones</p>
@@ -1286,6 +1359,10 @@ const Home = () => {
                     <img
                       src={item.image}
                       alt={item.title}
+                      width="1200"
+                      height="700"
+                      loading="lazy"
+                      decoding="async"
                       className="core-value-image"
                     />
                     <div className="core-value-image-overlay"></div>
@@ -1337,6 +1414,11 @@ const Home = () => {
                     <img
                       src={currentTestimonial.image}
                       alt={currentTestimonial.name}
+                      width="1200"
+                      height="700"
+                      loading="lazy"
+                      decoding="async"
+                       
                       className="testimonials-client-image"
                     />
                     <span className="testimonials-image-accent">✦</span>

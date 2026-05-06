@@ -131,8 +131,8 @@ const WealthCreation = () => {
             <p className="wc-hero-description">
               True wealth isn&apos;t built overnight — it&apos;s built with
               discipline, diversification, and the right guidance. Let EPM
-              Wealth&apos;s  craft a wealth creation
-              strategy tailored precisely to your goals.
+              Wealth&apos;s craft a wealth creation strategy tailored precisely
+              to your goals.
             </p>
 
             <div className="wc-hero-buttons">
@@ -396,6 +396,10 @@ const WealthCreation = () => {
                 <img
                   src="https://i.pinimg.com/736x/52/ad/c4/52adc455f6304b7b089eda4b511d789c.jpg"
                   alt="Investment philosophy"
+                  width="1200"
+                  height="700"
+                  loading="lazy"
+                  decoding="async"
                   className="wc-philosophy-image"
                 />
               </div>

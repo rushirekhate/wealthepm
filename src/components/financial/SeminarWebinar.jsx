@@ -133,34 +133,32 @@ const SeminarWebinar = () => {
   const crystalThreeRef = useRef(null);
 
   useEffect(() => {
+    const whyCards = document.querySelectorAll(".sw-why-card");
 
-const whyCards = document.querySelectorAll(".sw-why-card");
+    whyCards.forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
 
-whyCards.forEach((card) => {
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
+        gsap.to(card, {
+          rotationY: x * 10,
+          rotationX: y * -10,
+          transformPerspective: 1000,
+          duration: 0.35,
+          ease: "power2.out",
+        });
+      });
 
-    gsap.to(card, {
-      rotationY: x * 10,
-      rotationX: y * -10,
-      transformPerspective: 1000,
-      duration: 0.35,
-      ease: "power2.out",
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, {
+          rotationX: 0,
+          rotationY: 0,
+          duration: 0.55,
+          ease: "power3.out",
+        });
+      });
     });
-  });
-
-  card.addEventListener("mouseleave", () => {
-    gsap.to(card, {
-      rotationX: 0,
-      rotationY: 0,
-      duration: 0.55,
-      ease: "power3.out",
-    });
-  });
-});
-
 
     const ctx = gsap.context(() => {
       gsap.set(
@@ -327,6 +325,10 @@ whyCards.forEach((card) => {
           <img
             src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1800&auto=format&fit=crop"
             alt="Seminar audience"
+            width="1200"
+            height="700"
+            loading="lazy"
+            decoding="async"
           />
           <div className="sw-hero-overlay" />
           <div className="sw-grid" />
@@ -415,7 +417,15 @@ whyCards.forEach((card) => {
           {inspireCards.map((item) => (
             <div className="sw-gallery-card sw-tilt-card" key={item.id}>
               <div className="sw-gallery-shine"></div>
-              <img src={item.image} alt={item.title} />
+              <img
+                src={item.image}
+                alt={item.title}
+                width="1200"
+                height="700"
+                loading="lazy"
+                decoding="async"
+                 
+              />
               <div className="sw-gallery-overlay">
                 <h3>{item.title}</h3>
               </div>
@@ -433,8 +443,6 @@ whyCards.forEach((card) => {
       <section className="sw-why sw-reveal" id="why-attend">
         <div className="sw-section-head sw-center-head">
           <span className="sw-why-kicker">WHY CHOOSE EPM</span>
-          
-        
         </div>
 
         <div className="sw-why-grid">
@@ -493,7 +501,7 @@ whyCards.forEach((card) => {
         </div>
       </section>
 
-     <section className="wp-protection-cta-section">
+      <section className="wp-protection-cta-section">
         <div className="wp-protection-cta-bg">
           <span className="wp-cta-crystal wp-cta-crystal-1"></span>
           <span className="wp-cta-crystal wp-cta-crystal-2"></span>
@@ -507,11 +515,12 @@ whyCards.forEach((card) => {
 
         <div className="wp-protection-cta-wrap">
           <h2 className="wp-protection-cta-title">
-           Book a free seminar for your organisation
+            Book a free seminar for your organisation
           </h2>
 
           <p className="wp-protection-cta-text">
-           Empower your employees with the financial knowledge they deserve. Zero cost, maximum impact.
+            Empower your employees with the financial knowledge they deserve.
+            Zero cost, maximum impact.
           </p>
 
           <a href="#contact" className="wp-protection-cta-btn">

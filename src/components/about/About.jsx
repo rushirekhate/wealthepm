@@ -39,7 +39,7 @@ const teamMembers = [
       { label: "INDUSTRY KNOWLEDGE", value: "75" },
     ],
   },
-  
+
   {
     id: 3,
     name: "Rajesh Jain",
@@ -77,243 +77,261 @@ const About = () => {
     setActiveCard((prev) => (prev === id ? null : id));
   };
 
+  const About = lazy(() => import("./About"));
+
   return (
     <>
-     <div className="about-page">
-      <section className="about-hero" id="about">
-        <div className="about-hero-overlay"></div>
-        <div className="about-grid-lines"></div>
-        <div className="about-glow about-glow-one"></div>
-        <div className="about-glow about-glow-two"></div>
+      <div className="about-page">
+        <section className="about-hero" id="about">
+          <div className="about-hero-overlay"></div>
+          <div className="about-grid-lines"></div>
+          <div className="about-glow about-glow-one"></div>
+          <div className="about-glow about-glow-two"></div>
 
-        <div className="about-social-bar">
-          <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-            <FaInstagram />
-          </a>
+          <div className="about-social-bar">
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram />
+            </a>
 
-          <a
-            href="https://www.youtube.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="YouTube"
-          >
-            <FaYoutube />
-          </a>
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <FaYoutube />
+            </a>
 
-          <a
-            href="https://www.linkedin.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedinIn />
-          </a>
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedinIn />
+            </a>
 
-          <a
-            href="https://www.facebook.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-          >
-            <FaFacebookF />
-          </a>
-        </div>
-
-        <div className="about-container">
-          <div className="about-top-tag">
-            <span className="about-tag-line"></span>
-            <p>EPM WEALTH — EST. 2016</p>
-            <span className="about-tag-line"></span>
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <FaFacebookF />
+            </a>
           </div>
 
-          <div className="about-content">
-            <h3 className="about-title">
-              <span className="about-title-light">Connect</span>
-              <span className="about-title-gold">With Our Core</span>
-            </h3>
-
-            <h2 className="about-subtitle">
-              INSIGHT <span>·</span> INTEGRITY <span>·</span> EXCELLENCE
-            </h2>
-
-            <p className="about-description">
-              EPM Wealth, your very own wealth management company began its
-              journey in 2016 providing tailor-made strategies for individuals
-              and corporates, making challenging decisions effortless. Every
-              individual needs the understanding of instruments to channel their
-              wealth and we at EPM wealth help you do so. Even with the
-              progression of technology in recent times, our philosophy of
-              personal connection remains intact.
-            </p>
-
-            <div className="about-buttons">
-              <a href="#our-story" className="about-btn about-btn-primary">
-                OUR STORY <span>→</span>
-              </a>
-
-              <a href="#contact" className="about-btn about-btn-secondary">
-                START A CONVERSATION <span>→</span>
-              </a>
+          <div className="about-container">
+            <div className="about-top-tag">
+              <span className="about-tag-line"></span>
+              <p>EPM WEALTH — EST. 2016</p>
+              <span className="about-tag-line"></span>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="origin-story-section about-overlap-panel" id="our-story">
-        <div className="origin-story-shell">
-          <div className="origin-story-grid">
-            <div className="origin-story-left">
-              <div className="origin-story-top">
-                <p className="origin-story-label">OUR ORIGIN STORY</p>
-              </div>
+            <div className="about-content">
+              <h3 className="about-title">
+                <span className="about-title-light">Connect</span>
+                <span className="about-title-gold">With Our Core</span>
+              </h3>
 
-              <div className="origin-story-content">
-                <h2 className="origin-story-heading">
-                  "Your very own wealth management company — built on one
-                  promise: personalised connection never goes out of style."
-                </h2>
+              <h2 className="about-subtitle">
+                INSIGHT <span>·</span> INTEGRITY <span>·</span> EXCELLENCE
+              </h2>
 
-                <p className="origin-story-text">
-                  EPM Wealth began its journey in 2016 with a clear mission — to
-                  provide tailor-made wealth management strategies for
-                  individuals and corporates, making challenging financial
-                  decisions effortless.
-                </p>
+              <p className="about-description">
+                EPM Wealth, your very own wealth management company began its
+                journey in 2016 providing tailor-made strategies for individuals
+                and corporates, making challenging decisions effortless. Every
+                individual needs the understanding of instruments to channel
+                their wealth and we at EPM wealth help you do so. Even with the
+                progression of technology in recent times, our philosophy of
+                personal connection remains intact.
+              </p>
 
-                <p className="origin-story-text">
-                  Every individual needs the understanding of instruments to
-                  channel their wealth. We built EPM Wealth to be that guide.
-                  Even with the rapid progression of technology, our philosophy
-                  of deep personal connection with every client remains
-                  completely intact.
-                </p>
+              <div className="about-buttons">
+                <a href="#our-story" className="about-btn about-btn-primary">
+                  OUR STORY <span>→</span>
+                </a>
 
-                <a href="#contact" className="origin-story-cta">
-                  START YOUR JOURNEY <span>→</span>
+                <a href="#contact" className="about-btn about-btn-secondary">
+                  START A CONVERSATION <span>→</span>
                 </a>
               </div>
             </div>
+          </div>
+        </section>
 
-            <div className="origin-story-right">
-              <div className="origin-story-image-wrap">
-                <img
-                  src={originImg}
-                  alt="EPM Wealth origin story"
-                  className="origin-story-image"
-                />
+        <section
+          className="origin-story-section about-overlap-panel"
+          id="our-story"
+        >
+          <div className="origin-story-shell">
+            <div className="origin-story-grid">
+              <div className="origin-story-left">
+                <div className="origin-story-top">
+                  <p className="origin-story-label">OUR ORIGIN STORY</p>
+                </div>
+
+                <div className="origin-story-content">
+                  <h2 className="origin-story-heading">
+                    "Your very own wealth management company — built on one
+                    promise: personalised connection never goes out of style."
+                  </h2>
+
+                  <p className="origin-story-text">
+                    EPM Wealth began its journey in 2016 with a clear mission —
+                    to provide tailor-made wealth management strategies for
+                    individuals and corporates, making challenging financial
+                    decisions effortless.
+                  </p>
+
+                  <p className="origin-story-text">
+                    Every individual needs the understanding of instruments to
+                    channel their wealth. We built EPM Wealth to be that guide.
+                    Even with the rapid progression of technology, our
+                    philosophy of deep personal connection with every client
+                    remains completely intact.
+                  </p>
+
+                  <a href="#contact" className="origin-story-cta">
+                    START YOUR JOURNEY <span>→</span>
+                  </a>
+                </div>
+              </div>
+
+              <div className="origin-story-right">
+                <div className="origin-story-image-wrap">
+                  <img
+                    src={originImg}
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                    decoding="async"
+                    alt=""
+                    alt="EPM Wealth origin story"
+                    className="origin-story-image"
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="epm-team-section about-overlap-panel">
-        <div className="epm-team-container">
-          <div className="epm-team-heading-wrap">
-            <p className="epm-team-label">OUR LEADERSHIP</p>
-            <h2 className="epm-team-title">
-              Powered by Passion, Driven by Team Work
-            </h2>
-            <p className="epm-team-subtitle">
-              Our leadership team brings decades of experience across wealth
-              management, capital markets, and financial advisory — united by a
-              shared passion for transforming every client's financial future.
-            </p>
-          </div>
+        <section className="epm-team-section about-overlap-panel">
+          <div className="epm-team-container">
+            <div className="epm-team-heading-wrap">
+              <p className="epm-team-label">OUR LEADERSHIP</p>
+              <h2 className="epm-team-title">
+                Powered by Passion, Driven by Team Work
+              </h2>
+              <p className="epm-team-subtitle">
+                Our leadership team brings decades of experience across wealth
+                management, capital markets, and financial advisory — united by
+                a shared passion for transforming every client's financial
+                future.
+              </p>
+            </div>
 
-          <div className="epm-team-grid">
-            {teamMembers.map((member, index) => (
-              <div
-                key={member.id}
-                className={`epm-team-card ${
-                  activeCard === member.id ? "is-flipped" : ""
-                } ${index >= 3 ? "epm-team-card-bottom" : ""}`}
-                onClick={() => handleFlip(member.id)}
-              >
-                <div className="epm-team-card-inner">
-                  <div className="epm-team-card-front">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="epm-team-image"
-                    />
-                    <div className="epm-team-front-overlay"></div>
+            <div className="epm-team-grid">
+              {teamMembers.map((member, index) => (
+                <div
+                  key={member.id}
+                  className={`epm-team-card ${
+                    activeCard === member.id ? "is-flipped" : ""
+                  } ${index >= 3 ? "epm-team-card-bottom" : ""}`}
+                  onClick={() => handleFlip(member.id)}
+                >
+                  <div className="epm-team-card-inner">
+                    <div className="epm-team-card-front">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="epm-team-image"
+                        width="1200"
+                        height="700"
+                        loading="lazy"
+                        decoding="async"
+                        alt=""
+                      />
+                      <div className="epm-team-front-overlay"></div>
 
-                    <div className="epm-team-front-content">
-                      <span className="epm-team-front-tag">EPM Wealth</span>
-                      <h3>{member.name}</h3>
-                      <p>{member.role}</p>
+                      <div className="epm-team-front-content">
+                        <span className="epm-team-front-tag">EPM Wealth</span>
+                        <h3>{member.name}</h3>
+                        <p>{member.role}</p>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="epm-team-card-back">
-                    <div className="epm-team-back-content">
-                      <p className="epm-team-back-mini">PROFILE DETAILS</p>
-                      <h3>{member.name}</h3>
-                      <h4>{member.role}</h4>
+                    <div className="epm-team-card-back">
+                      <div className="epm-team-back-content">
+                        <p className="epm-team-back-mini">PROFILE DETAILS</p>
+                        <h3>{member.name}</h3>
+                        <h4>{member.role}</h4>
 
-                      {member.stats ? (
-                        <div className="epm-team-stats-list">
-                          {member.stats.map((item, i) => (
-                            <div className="epm-team-stat-row" key={i}>
-                              <span>{item.label}</span>
-                              <strong>{item.value}</strong>
-                            </div>
-                          ))}
-                        </div>
-                      ) : null}
+                        {member.stats ? (
+                          <div className="epm-team-stats-list">
+                            {member.stats.map((item, i) => (
+                              <div className="epm-team-stat-row" key={i}>
+                                <span>{item.label}</span>
+                                <strong>{item.value}</strong>
+                              </div>
+                            ))}
+                          </div>
+                        ) : null}
 
-                      <button
-                        type="button"
-                        className="epm-team-flip-btn"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleFlip(member.id);
-                        }}
-                      >
-                        {activeCard === member.id ? "Show Front" : "View Details"}
-                      </button>
+                        <button
+                          type="button"
+                          className="epm-team-flip-btn"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleFlip(member.id);
+                          }}
+                        >
+                          {activeCard === member.id
+                            ? "Show Front"
+                            : "View Details"}
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="advisory-council-section about-overlap-panel">
+          <div className="advisory-council-container">
+            <div className="advisory-council-top">
+              <div className="advisory-council-top-left">
+                <p className="advisory-council-label">EXTERNAL GUIDANCE</p>
+                <h2 className="advisory-council-title">Advisory Council</h2>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      <section className="advisory-council-section about-overlap-panel">
-        <div className="advisory-council-container">
-          <div className="advisory-council-top">
-            <div className="advisory-council-top-left">
-              <p className="advisory-council-label">EXTERNAL GUIDANCE</p>
-              <h2 className="advisory-council-title">Advisory Council</h2>
+              <div className="advisory-council-top-right">
+                <p>
+                  Industry luminaries who provide strategic counsel — bringing
+                  decades of expertise across finance, markets, and governance
+                  to elevate every decision we make.
+                </p>
+              </div>
             </div>
 
-            <div className="advisory-council-top-right">
-              <p>
-                Industry luminaries who provide strategic counsel — bringing
-                decades of expertise across finance, markets, and governance to
-                elevate every decision we make.
-              </p>
+            <div className="advisory-council-grid">
+              {/* existing advisory cards as it is */}
             </div>
           </div>
+        </section>
 
-          <div className="advisory-council-grid">
-            {/* existing advisory cards as it is */}
-          </div>
+        <div className="about-overlap-panel">
+          <MissionVision />
         </div>
-      </section>
-
-      <div className="about-overlap-panel">
-        <MissionVision />
       </div>
-    </div>
     </>
   );
 };

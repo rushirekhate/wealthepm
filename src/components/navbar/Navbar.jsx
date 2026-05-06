@@ -116,6 +116,10 @@ const Navbar = () => {
             <img
               src="https://epmwealth.com/wp-content/uploads/2023/06/logo-emp.png"
               alt="EPM Logo"
+              width="1200"
+              height="700"
+              loading="lazy"
+              decoding="async"
             />
           </Link>
         </div>
@@ -199,7 +203,6 @@ const Navbar = () => {
             </div>
 
             <div className={`mobile-submenu ${literacyOpen ? "open" : ""}`}>
-             
               <Link to="/financialliteracy/seminar-webinar" onClick={closeMenu}>
                 Seminar & Webinar
               </Link>
