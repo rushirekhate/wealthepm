@@ -6999,5 +6999,10 @@ body {
 
 }
 
+@media(max-width:768px){
 
+  .epm-orbit-rotator{
+    animation:none;
+  }
 
+}
