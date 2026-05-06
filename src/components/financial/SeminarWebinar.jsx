@@ -18,6 +18,10 @@ import {
 
 gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.config({
+  ignoreMobileResize: true,
+});
+
 const statsData = [
   { value: "150", label: "SEMINARS & WEBINARS" },
   { value: "50K", label: "EMPLOYEES REACHED" },

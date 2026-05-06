@@ -18,6 +18,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.config({
+  ignoreMobileResize: true,
+});
+
 const topicOptions = [
   "Personal Wealth Advisory",
   "Family Office Advisory",

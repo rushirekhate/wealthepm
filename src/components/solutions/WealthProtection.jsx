@@ -17,6 +17,10 @@ import "./WealthProtection.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.config({
+  ignoreMobileResize: true,
+});
+
 const protectionCards = [
   {
     id: 1,

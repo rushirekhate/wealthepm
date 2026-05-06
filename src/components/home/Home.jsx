@@ -41,6 +41,10 @@ import heroVaultImg from "../../assets/home/epm-vault-hero.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.config({
+  ignoreMobileResize: true,
+});
+
 const features = [
   {
     id: 1,

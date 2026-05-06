@@ -154,7 +154,7 @@
 .sw-crystal {
   position: absolute;
   border-radius: 50%;
-  filter: blur(70px);
+  filter: blur(30px);
   z-index: 2;
   pointer-events: none;
 }
