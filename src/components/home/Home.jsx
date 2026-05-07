@@ -1099,12 +1099,50 @@ const Home = () => {
                   <span className="epm-hero-text-line epm-line-excellence">
                     EXCELLENCE
                   </span>
+
                   {showTyped && (
                     <div className="epm-hero-typed-row">
                       <span className="epm-hero-typed-text">{typedText}</span>
                       <span className="epm-typed-caret" />
                     </div>
                   )}
+
+                  <div
+                    className={`epm-hero-inline-social ${videoEnded ? "show" : ""}`}
+                  >
+                    <a
+                      href="https://www.instagram.com/epm_wealth/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaInstagram />
+                    </a>
+
+                    <a
+                      href="https://www.youtube.com/@epmwealth101"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaYoutube />
+                    </a>
+
+                    <a
+                      href="https://www.linkedin.com/company/epm-wealth/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaLinkedinIn />
+                    </a>
+
+                    <a
+                      href="https://www.facebook.com/epmwealthadvisor"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaFacebookF />
+                    </a>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -1112,54 +1150,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── Social Icons — fixed, only visible AFTER hero ── */}
-      <div
-        ref={socialIconsRef}
-        className="epm-social-stick"
-        aria-label="Social media links"
-      >
-        <a
-          href="https://www.instagram.com/"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Instagram"
-          className="epm-social-btn"
-          style={{ "--delay": "0ms" }}
-        >
-          <FaInstagram />
-        </a>
-        <a
-          href="https://www.youtube.com/"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="YouTube"
-          className="epm-social-btn"
-          style={{ "--delay": "60ms" }}
-        >
-          <FaYoutube />
-        </a>
-        <a
-          href="https://www.linkedin.com/"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="LinkedIn"
-          className="epm-social-btn"
-          style={{ "--delay": "120ms" }}
-        >
-          <FaLinkedinIn />
-        </a>
-        <a
-          href="https://www.facebook.com/"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Facebook"
-          className="epm-social-btn"
-          style={{ "--delay": "180ms" }}
-        >
-          <FaFacebookF />
-        </a>
-      </div>
-
+     
+     
       <div className="epm-hero-spacer"></div>
 
       <div className="epm-overlap-stack">
