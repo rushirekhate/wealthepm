@@ -8,12 +8,29 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <title>EPM Wealth</title>
 
+    <!-- DNS prefetch for external image/video hosts -->
+    <link rel="dns-prefetch" href="https://epmwealth.com" />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    <link rel="dns-prefetch" href="https://i.pinimg.com" />
+
+    <!-- LCP hero poster — fetch eagerly so it renders before JS hydrates -->
+    <link rel="preload" as="image" href="/poster.webp" fetchpriority="high" />
+
+    <!-- Single Google Fonts request (display=swap prevents invisible text) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Inline critical layout style — prevents FOUC / CLS on first paint -->
+    <style>
+      /* Reserve navbar height immediately so layout is stable */
+      body { margin: 0; }
+      #root { min-height: 100dvh; }
+      .navbar-wrapper { height: 84px; } /* 68px nav + 8px padding-top + 8px buffer */
+    </style>
   </head>
   <body>
     <div id="root"></div>

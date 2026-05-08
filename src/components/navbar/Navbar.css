@@ -1104,3 +1104,94 @@
     border-left: 2px solid rgba(160, 106, 60, 0.25);
   }
 }
+
+
+/* ============================================================
+   NAVBAR — CORE WEB VITALS SAFE PATCH
+   Goal: Eliminate CLS caused by navbar height changing after
+   font load, logo load, or JS hydration.
+   ============================================================ */
+
+/* 1. Fix wrapper to explicit height — matches index.html inline style.
+      This prevents the page from re-measuring the navbar height
+      after the logo image or fonts load. */
+.navbar-wrapper {
+  height: 84px !important; /* 68px nav + 8px padding-top + 8px bottom buffer */
+  /* contain: layout prevents navbar internal reflows from propagating */
+  contain: layout style;
+}
+
+/* 2. Navbar itself: lock to min-height so it never collapses */
+.navbar {
+  min-height: 68px !important;
+}
+
+/* 3. Logo image: lock to explicit height (already set to height:46px)
+      Add explicit width to prevent aspect-ratio CLS during load */
+.nav-logo img {
+  height: 46px !important;
+  width: auto !important;
+  /* Reserve the vertical space even before image loads */
+  min-width: 80px; /* approximate logo width */
+  aspect-ratio: auto 1200 / 700; /* matches width/height attrs in JSX */
+}
+
+/* 4. Tablet: adjust wrapper height to match smaller navbar */
+@media (max-width: 1200px) {
+  .navbar-wrapper {
+    height: 80px !important;
+  }
+  .navbar {
+    min-height: 64px !important;
+  }
+  .nav-logo img {
+    height: 42px !important;
+    min-width: 70px;
+  }
+}
+
+/* 5. Mobile: match the 60px nav height */
+@media (max-width: 992px) {
+  .navbar-wrapper {
+    height: 76px !important; /* 64px nav + 6px padding + 6px buffer */
+  }
+  .navbar {
+    min-height: 64px !important;
+  }
+  .nav-logo img {
+    height: 36px !important;
+    min-width: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-wrapper {
+    height: 70px !important; /* 60px nav + 5px padding + 5px buffer */
+  }
+  .navbar {
+    min-height: 60px !important;
+  }
+  .nav-logo img {
+    height: 32px !important;
+    min-width: 55px;
+  }
+}
+
+@media (max-width: 420px) {
+  .navbar-wrapper {
+    height: 66px !important;
+  }
+  .navbar {
+    min-height: 58px !important;
+  }
+}
+
+/* 6. Disable shine animation on mobile (layout-safe but paint-heavy) */
+@media (max-width: 768px) {
+  .navbar::after {
+    animation: none !important;
+    display: none;
+  }
+}
+
+/* END NAVBAR CWV PATCH */

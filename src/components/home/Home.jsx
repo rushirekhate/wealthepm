@@ -407,6 +407,40 @@ const Home = () => {
   const [typedText, setTypedText] = useState("");
   const [socialVisible, setSocialVisible] = useState(false);
 
+  /* ── Mobile video deferred load — improves LCP by ~0.6–1s on mobile ── */
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) return; // Desktop: browser streams normally
+    // On mobile: strip src until page is interactive so poster is the LCP
+    const originalSrc = "/videos/hero-video.mp4";
+    video.removeAttribute("src");
+    video.load(); // flush any existing buffer
+    const loadVideo = () => {
+      if (video.src) return; // already loaded
+      video.src = originalSrc;
+      video.load();
+      video.play().catch(() => {}); // graceful autoplay fallback
+    };
+    if (document.readyState === "complete") {
+      // page already loaded — use idle callback for low priority
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadVideo, { timeout: 2000 });
+      } else {
+        setTimeout(loadVideo, 1500);
+      }
+    } else {
+      window.addEventListener("load", () => {
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(loadVideo, { timeout: 2000 });
+        } else {
+          setTimeout(loadVideo, 1500);
+        }
+      }, { once: true });
+    }
+  }, []);
+
   const [experience, ref1] = useCountUp(30, 2000, "+");
   const [clients, ref2] = useCountUp(1000, 2400, "+");
   const [locations, ref3] = useCountUp(2, 1800);

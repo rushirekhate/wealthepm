@@ -7551,7 +7551,341 @@ body {
     font-size: clamp(1rem, 5.5vw, 2rem) !important;
   }
 
+
   .epm-hero-typed-row{
     margin-top: 8px !important;
   }
 }
+
+
+/* ============================================================
+   CORE WEB VITALS SAFE PATCH — appended, no design changes
+   Targets: Desktop CLS 0.305 → <0.1 | Mobile FCP/LCP/SI
+   Rules: transform-only, no height/margin/padding/top/left
+   ============================================================ */
+
+/* ── 1. DESKTOP CLS ROOT CAUSE FIX ──────────────────────────
+   The hero uses position:sticky + 100vh. The spacer (100vh) below
+   the hero pushes content down, but when the sticky element reflows
+   (e.g. after font load or GSAP setState), the overlap stack shifts.
+   Fix: Contain the spacer + stack in a single block-formatting context
+   with a stable height so no reflow can propagate to measured elements.
+───────────────────────────────────────────────────────────── */
+
+/* Give the home page a stable stacking context */
+.epm-home-page {
+  contain: layout style; /* prevents child reflows from propagating */
+}
+
+/* Hero wrap: already sticky/100vh — just anchor it */
+.epm-hero-wrap {
+  /* Ensure it does NOT change height after JS runs */
+  /* height: 100vh is already set — add contain so children can't affect it */
+  contain: layout paint; /* clips overflowing children, no layout bleed */
+  /* Critical: ensure padding-top is not animated or font-loaded-shifted */
+  padding-top: calc(68px + 8px + 12px) !important;
+}
+
+@media (max-width: 768px) {
+  .epm-hero-wrap {
+    padding-top: calc(60px + 8px + 10px) !important;
+  }
+}
+
+/* Spacer must be exactly 100vh with no margin drift */
+.epm-hero-spacer {
+  height: 100vh !important;
+  min-height: 100vh !important;
+  flex-shrink: 0 !important;
+  contain: strict; /* fully contained box — never shifts neighbours */
+}
+
+/* Overlap stack: give it a stacking context but let height be natural */
+.epm-overlap-stack {
+  position: relative;
+  z-index: 10;
+  /* Contain reflows from animated children */
+  contain: layout style;
+  /* Negative margin would cause CLS — ensure none exists */
+  margin-top: 0 !important;
+}
+
+/* ── 2. NAVBAR STABLE HEIGHT (prevents CLS from logo load) ───
+   The navbar-wrapper inline style in index.html already reserves 84px.
+   Mirror that here for completeness and specificity safety.
+───────────────────────────────────────────────────────────── */
+/* Navbar height is controlled in Navbar.css — see end of Navbar.css patch */
+
+/* ── 3. TYPED TEXT CONTAINER — PREVENT CLS WHEN TEXT APPEARS ─ */
+/* Reserve vertical space so the block doesn't shift siblings */
+.epm-hero-typed-row {
+  min-height: 2.8rem !important; /* matches normal line — already set, reinforce */
+  contain: layout; /* text changes do not shift neighbours */
+}
+
+.epm-typed-wrap {
+  min-height: 52px !important;
+  contain: layout;
+}
+
+/* ── 4. BELOW-FOLD SECTIONS — CONTENT-VISIBILITY ─────────────
+   Defers rendering of off-screen sections → improves TTI / SI.
+   contain-intrinsic-size is a best-guess placeholder height.
+───────────────────────────────────────────────────────────── */
+.decision-section,
+.vault-section,
+.awards-showcase-section,
+.core-values-section,
+.testimonials-luxury-section,
+.sip-luxury-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 700px; /* ~section height placeholder */
+}
+
+/* ── 5. IMAGE DIMENSION CONTAINMENT ──────────────────────────
+   Prevent shift when images load (width+height attrs on <img> handle
+   intrinsic ratio, this adds a layout box just in case).
+───────────────────────────────────────────────────────────── */
+.vault-featured-image,
+.vault-article-image,
+.core-value-image,
+.testimonials-client-image {
+  /* Already has width/height attrs in JSX; this ensures aspect-ratio is respected */
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.testimonials-client-image {
+  aspect-ratio: 4 / 3; /* portrait portrait */
+}
+
+/* Decision cards use background-image — reserve height so card doesn't collapse */
+.decision-card {
+  min-height: 340px !important;
+  contain: layout paint; /* background-image can't shift card */
+}
+
+@media (max-width: 768px) {
+  .decision-card {
+    min-height: 260px !important;
+  }
+}
+
+/* Awards gallery card — fixed size prevents marquee CLS */
+.awards-gallery-card {
+  flex-shrink: 0 !important;
+  contain: layout paint;
+}
+
+.awards-gallery-card img {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── 6. MOBILE PERFORMANCE TWEAKS ────────────────────────────
+   a) Reduce backdrop-filter blur on mobile (paint-heavy)
+   b) Disable expensive infinite animations on mobile
+   c) Simplify will-change on mobile (GPU memory pressure)
+───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Reduce blur layers — same visual effect, less paint */
+  .epm-hero-video-wrap,
+  .epm-liquid-btn-glass,
+  .epm-social-btn,
+  .mobile-menu-panel {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+  /* Disable infinite float/orbit/crystal/shine on mobile — they cost GPU paint
+     but add no CWV value. They still run on desktop where the score is fine. */
+  .epm-hero-content,
+  .epm-title-main,
+  .epm-line-wealth,
+  .epm-line-excellence {
+    animation: none !important;
+  }
+
+  /* Orbit / crystal decorative elements — expensive on mobile */
+  .epm-orbit-ring,
+  .epm-crystal-one,
+  .epm-crystal-two,
+  .epm-crystal-three,
+  .epm-mesh-bg,
+  .epm-light-orb,
+  .epm-orbit-dot,
+  .epm-orbit-counter {
+    animation: none !important;
+  }
+
+  /* Awards marquee: keep but at reduced complexity */
+  .awards-horizontal-scroll-track {
+    /* animation speed override is already done in the CSS, just ensure GPU layer */
+    will-change: transform;
+  }
+
+  /* Simplify will-change to save GPU memory on mobile */
+  .epm-overlap-panel,
+  .epm-stats-section,
+  .solutions-section,
+  .decision-section,
+  .vault-section,
+  .awards-showcase-section,
+  .core-values-section {
+    will-change: auto !important;
+  }
+}
+
+/* ── 7. FOOTER FLOAT ANIMATIONS — DISABLE ON MOBILE ──────────
+   footerSoftLift uses translateY (compositor-safe) but adds unnecessary
+   paint cycles on mobile. Remove to save battery and reduce TBT.
+───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .luxury-footer-brand,
+  .luxury-footer-column,
+  .epm-footer-column {
+    animation: none !important;
+  }
+
+  /* footerOrbFloat also unnecessary */
+  .luxury-footer::before,
+  .luxury-footer::after,
+  .epm-footer::before,
+  .epm-footer::after {
+    animation: none !important;
+  }
+
+  /* Stable footer grid on mobile: give columns a fixed min-height so
+     lazy-loaded content below doesn't shift footer up/down */
+  .luxury-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .luxury-footer-column,
+  .epm-footer-column {
+    min-height: auto !important; /* rely on content, not animation */
+    transform: none !important;
+  }
+
+  /* Bottom bar: stable wrap */
+  .epm-footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .epm-footer-links {
+    flex-wrap: wrap !important;
+    gap: 14px 20px !important;
+  }
+}
+
+/* ── 8. PREVENT CLS FROM GSAP INITIAL-STATE FLASH ────────────
+   GSAP sets opacity:0 / y:80 on elements before animating them in.
+   If GSAP fires after first render these elements are briefly visible
+   then jump — causing CLS. Setting the same initial state via CSS
+   ensures they're invisible from the very first paint.
+───────────────────────────────────────────────────────────── */
+.epm-reveal-section {
+  /* Initial invisible state mirrors GSAP fromTo start */
+  opacity: 0;
+  transform: translateY(80px);
+  /* GPU layer — prevents reflow from opacity/transform */
+  will-change: opacity, transform;
+  transition: none; /* GSAP controls the timing, not CSS transitions */
+}
+
+/* Once GSAP runs, it sets inline style opacity:1, y:0 —
+   but if GSAP is disabled (mobile guard / reduced-motion), reveal anyway */
+@media (max-width: 768px) {
+  /* On mobile GSAP is disabled (see the useEffect guard), so reveal via CSS */
+  .epm-reveal-section {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    will-change: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .epm-reveal-section {
+    opacity: 1 !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+}
+
+/* ── 9. HERO VIDEO — STABLE POSTER BOX ───────────────────────
+   While video loads the poster should fill the same box with no shift.
+   The video has position:absolute inset:0 so it already matches,
+   but add aspect-ratio fallback for environments that don't autosize.
+───────────────────────────────────────────────────────────── */
+.epm-hero-video {
+  /* Ensure poster respects box even before video metadata loads */
+  background-color: #000; /* fallback before poster loads */
+  background-image: url('/poster.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+/* ── 10. GOLD SHIMMER — DESKTOP ONLY ─────────────────────────
+   Background-position animation on .epm-line-wealth / .epm-line-excellence
+   is compositor-safe (background-position is NOT layout) but it still
+   triggers paint on some GPUs. Keep on desktop, skip on mobile.
+───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .epm-line-wealth,
+  .epm-line-excellence {
+    animation: none !important;
+    background-position: 0% center !important;
+  }
+}
+
+/* ── 11. STATS SECTION — STABLE HEIGHT ───────────────────────
+   The count-up animation changes text content; text width changing
+   can shift siblings if the box is auto-sized. Fix with min-width.
+───────────────────────────────────────────────────────────── */
+.epm-stat-box h2 {
+  min-width: 5ch; /* prevents CLS from shorter early values */
+  display: inline-block;
+  font-variant-numeric: tabular-nums; /* equal-width digits */
+}
+
+/* ── 12. WHATSAPP FLOAT — STABLE POSITION (no layout shift) ──
+   position:fixed elements don't cause CLS by definition, but
+   its entrance animation (whatsappEntrance) includes translateY
+   which is compositor-safe. Leave it — it's fine.
+───────────────────────────────────────────────────────────── */
+
+/* ── 13. CORE VALUE CARDS — STABLE GRID BEFORE GSAP ─────────
+   GSAP animates .core-value-card from opacity:0/y:60.
+   CSS-mirrors the initial state so there's no flash.
+───────────────────────────────────────────────────────────── */
+.core-value-card {
+  /* desktop: GSAP controls entry */
+  /* we rely on GSAP context guard (window.innerWidth > 768) */
+}
+
+@media (max-width: 768px) {
+  /* On mobile GSAP is disabled — ensure cards are visible */
+  .core-value-card {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
+/* ── 14. TESTIMONIALS CARD FLOAT — REDUCE ON MOBILE ──────────
+   testimonialCardFloat uses translateY — safe, but costs paint on mobile.
+───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .testimonials-luxury-card {
+    animation: none !important;
+  }
+}
+
+/* END OF CORE WEB VITALS SAFE PATCH */

@@ -1010,3 +1010,100 @@
 .epm-login-page ~ .epm-footer::after {
   display: none !important;
 }
+
+
+/* ============================================================
+   FOOTER — CORE WEB VITALS SAFE PATCH
+   Goal: Prevent footer-related CLS; defer below-fold paint
+   ============================================================ */
+
+/* 1. Footer logo — locked dimensions (image has width/height attrs)
+      Prevents CLS while external logo loads */
+.luxury-footer-logo {
+  width: 100px !important;
+  height: auto !important;
+  aspect-ratio: auto 1200 / 700; /* matches img width/height attrs */
+  min-height: 42px; /* approximate rendered height */
+}
+
+/* 2. Social icon links — fixed size prevents reflow when icons load */
+.luxury-footer-socials a {
+  width: 44px !important;
+  height: 44px !important;
+  flex-shrink: 0;
+}
+
+/* 3. Badge pills — min-height already set (34px), reinforce */
+.luxury-footer-badges span {
+  min-height: 34px !important;
+  flex-shrink: 0;
+}
+
+/* 4. Legal footer — apply content-visibility since it's always below fold */
+.epm-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 220px;
+}
+
+/* 5. Footer columns — stable min-height prevents content from collapsing
+      before lazy-loaded data fills them */
+.luxury-footer-column {
+  min-height: 120px; /* prevents shift during initial render */
+}
+
+/* 6. Footer grid on mobile — disable complex grid reflow */
+@media (max-width: 768px) {
+  /* Force stable single-column layout (mirrors Home.css patch for footer) */
+  .luxury-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  /* Remove float animations to save paint */
+  .luxury-footer-brand,
+  .luxury-footer-column {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .luxury-footer-column {
+    min-height: auto !important;
+  }
+
+  /* Bottom bar: stable vertical stack */
+  .epm-footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+
+  .epm-footer-links {
+    gap: 12px 18px !important;
+    flex-wrap: wrap !important;
+  }
+
+  /* WhatsApp float: keep but reduce animation cost */
+  .epm-whatsapp-float {
+    animation:
+      whatsappEntrance 0.9s ease-out,
+      whatsappFloaty 3.2s ease-in-out infinite 0.9s !important;
+    /* drop pulse ring on mobile — saves one animation */
+  }
+
+  .epm-whatsapp-float::before {
+    animation: none !important;
+  }
+}
+
+/* 7. Orb decorators — remove on mobile (paint-heavy, no CWV value) */
+@media (max-width: 768px) {
+  .luxury-footer::before,
+  .luxury-footer::after,
+  .epm-footer::before,
+  .epm-footer::after {
+    animation: none !important;
+    opacity: 0.4; /* faded but not removed — keeps design intent */
+  }
+}
+
+/* END FOOTER CWV PATCH */
