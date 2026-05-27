@@ -212,7 +212,6 @@ const About = () => {
                     height="700"
                     loading="lazy"
                     decoding="async"
-                    alt=""
                     alt="EPM Wealth origin story"
                     className="origin-story-image"
                   />
@@ -256,7 +255,7 @@ const About = () => {
                         height="700"
                         loading="lazy"
                         decoding="async"
-                        alt=""
+                        
                       />
                       <div className="epm-team-front-overlay"></div>
 
