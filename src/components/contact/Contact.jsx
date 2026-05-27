@@ -131,42 +131,10 @@ const Contact = () => {
     const hero = heroRef.current;
     const shell = shellRef.current;
 
-    /*const handleMouseMove = (e) => {
-      if (!hero || !shell || window.innerWidth <= 991) return;
-
-      const rect = hero.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-
-      gsap.to(shell, {
-        rotationY: x * 6,
-        rotationX: y * -4,
-        x: x * 10,
-        y: y * 8,
-        transformPerspective: 1400,
-        transformOrigin: "center center",
-        duration: 0.7,
-        ease: "power3.out",
-      });
-    };
-
-    const handleLeave = () => {
-      gsap.to(shell, {
-        rotationY: 0,
-        rotationX: 0,
-        x: 0,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out",
-      });
-    };
-
-    hero?.addEventListener("mousemove", handleMouseMove);
-    hero?.addEventListener("mouseleave", handleLeave);*/
+   
 
     return () => {
-     /* hero?.removeEventListener("mousemove", handleMouseMove);
-      hero?.removeEventListener("mouseleave", handleLeave);*/
+    
       ctx.revert();
     };
   }, []);
