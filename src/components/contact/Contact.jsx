@@ -162,14 +162,14 @@ const Contact = () => {
     };
 
     hero?.addEventListener("mousemove", handleMouseMove);
-    hero?.addEventListener("mouseleave", handleLeave);
+    hero?.addEventListener("mouseleave", handleLeave);*/
 
     return () => {
-      hero?.removeEventListener("mousemove", handleMouseMove);
-      hero?.removeEventListener("mouseleave", handleLeave);
+     /* hero?.removeEventListener("mousemove", handleMouseMove);
+      hero?.removeEventListener("mouseleave", handleLeave);*/
       ctx.revert();
     };
-  }, []);*/
+  }, []);
 
   return (
     <section className="legacy-contact-page" ref={pageRef}>
