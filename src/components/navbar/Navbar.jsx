@@ -41,7 +41,8 @@ const Navbar = () => {
             onClick={closeMenu}
             className={location.pathname === "/about" ? "active" : ""}
           >
-            About
+            The Firm
+
           </Link>
 
           {/* DESKTOP SOLUTIONS DROPDOWN */}
@@ -55,21 +56,21 @@ const Navbar = () => {
                 location.pathname.includes("/solutions") ? "active" : ""
               }`}
             >
-              Solutions <span className="desktop-arrow">▾</span>
+              Our Craft <span className="desktop-arrow">▾</span>
             </span>
 
             <div className="nav-dropdown-menu">
               <Link to="/solutions/wealth-creation" onClick={closeMenu}>
-                Wealth Creation
+               Building Wealth
               </Link>
               <Link to="/solutions/wealth-protection" onClick={closeMenu}>
-                Wealth Protection
+                Sheilding Wealth
               </Link>
               <Link to="/solutions/wealth-management" onClick={closeMenu}>
-                Wealth Management
+               Stewarding Wealth
               </Link>
               <Link to="/solutions/portfolio-consultant" onClick={closeMenu}>
-                Portfolio Consultant
+                Portfolio Consultation
               </Link>
             </div>
           </div>
@@ -88,12 +89,12 @@ const Navbar = () => {
                   : ""
               }`}
             >
-              Financial Literacy <span className="desktop-arrow">▾</span>
+             The Knowledge Edge <span className="desktop-arrow">▾</span>
             </span>
 
             <div className="nav-dropdown-menu">
               <Link to="/financialliteracy/seminar-webinar" onClick={closeMenu}>
-                Seminar & Webinar
+               Seminar & Webinar
               </Link>
             </div>
           </div>
@@ -107,7 +108,7 @@ const Navbar = () => {
                 : ""
             }
           >
-            Entrepreneurial Initiative
+           The EPM Alliance
           </Link>
         </div>
 
@@ -130,7 +131,7 @@ const Navbar = () => {
             onClick={closeMenu}
             className={location.pathname === "/login" ? "active" : ""}
           >
-            Log-in
+            Login
           </Link>
 
           <Link
@@ -138,7 +139,7 @@ const Navbar = () => {
             onClick={closeMenu}
             className={location.pathname === "/contact" ? "active" : ""}
           >
-            Contact
+          Contact Us
           </Link>
         </div>
 

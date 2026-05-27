@@ -178,7 +178,9 @@
 
 .wp-hero-title span {
   display: block;
-  animation: wpTitleFloat 6s ease-in-out infinite;
+ /* animation: wpTitleFloat 6s ease-in-out infinite;*/
+ animation:none;
+
 }
 
 .wp-hero-title span:nth-child(2) {
@@ -347,7 +349,8 @@
   margin-top: 0;
   transform-style: preserve-3d;
   transform: perspective(1800px) rotateY(-9deg) rotateX(6deg);
-  animation: wpModelFloat 7s ease-in-out infinite;
+  /*animation: wpModelFloat 7s ease-in-out infinite;*/
+  animation:none;
 }
 
 .wp-model-glow {

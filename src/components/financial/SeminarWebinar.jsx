@@ -137,10 +137,10 @@ const SeminarWebinar = () => {
   const crystalTwoRef = useRef(null);
   const crystalThreeRef = useRef(null);
 
-  useEffect(() => {
+ useEffect(() => {
     const whyCards = document.querySelectorAll(".sw-why-card");
 
-    whyCards.forEach((card) => {
+   /* whyCards.forEach((card) => {
       card.addEventListener("mousemove", (e) => {
         const rect = card.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -153,7 +153,7 @@ const SeminarWebinar = () => {
           duration: 0.35,
           ease: "power2.out",
         });
-      });
+      });*/
 
       card.addEventListener("mouseleave", () => {
         gsap.to(card, {
@@ -270,7 +270,7 @@ const SeminarWebinar = () => {
     }, pageRef);
 
     const hero = heroRef.current;
-    const handleMouseMove = (e) => {
+   /* const handleMouseMove = (e) => {
       if (!hero) return;
       const rect = hero.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -321,7 +321,7 @@ const SeminarWebinar = () => {
       hero?.removeEventListener("mouseleave", resetMouse);
       ctx.revert();
     };
-  }, []);
+  }, []);*/
 
   return (
     <div className="sw-page" ref={pageRef}>

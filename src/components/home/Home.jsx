@@ -30,7 +30,11 @@ import { GiBigDiamondRing } from "react-icons/gi";
 import { MdFamilyRestroom } from "react-icons/md";
 
 import { Link } from "react-router-dom";
-
+import stageImg from "../../assets/feature/stageImg.jpeg";
+import secondImg from "../../assets/feature/secondImg.jpeg";
+import thredImg from "../../assets/feature/thredImg.jpeg";
+import fouthImg from "../../assets/feature/fouthImg.jpeg";
+import awardsImg from "../../assets/feature/awards.jpeg";
 import featuresImg from "../../assets/feature/features.webp";
 import featureImg from "../../assets/feature/feature.webp";
 import featuressImg from "../../assets/feature/featuress.webp";
@@ -50,30 +54,29 @@ const features = [
     id: 1,
     bgImage: featuresImg,
     title: "Customized For You",
-    description: "Easy and simple to understand tailor-made solutions for you",
-    meta: "PERSONALISED SOLUTIONS",
+  /*  description: "Easy and simple to understand tailor-made solutions for you",
+    meta: "PERSONALISED SOLUTIONS",*/
   },
   {
     id: 2,
-    bgImage:
-      "https://i.pinimg.com/1200x/cf/d6/4c/cfd64ce861ac53a14454d78e2fb887f7.jpg",
+    bgImage: secondImg,
     title: "Technically Driven",
-    description: "User oriented digital transaction anytime anywhere",
-    meta: "DIGITAL TRANSACTIONS",
+  /*  description: "User oriented digital transaction anytime anywhere",
+    meta: "DIGITAL TRANSACTIONS",*/
   },
   {
     id: 3,
-    bgImage: featuressImg,
+    bgImage: thredImg,
     title: "Transparent And Client Centric",
-    description: "Track where and how your money is invested at all times",
-    meta: "CLIENT-FIRST APPROACH",
+  /*  description: "Track where and how your money is invested at all times",
+    meta: "CLIENT-FIRST APPROACH",*/
   },
   {
     id: 4,
-    bgImage: featureImg,
+    bgImage: fouthImg,
     title: "Data-Driven",
-    description: "Powered by return, guided by data",
-    meta: "SMART ANALYTICS",
+  /*  description: "Powered by return, guided by data",
+    meta: "SMART ANALYTICS", */
   },
 ];
 
@@ -101,7 +104,7 @@ const articles = [
     type: "ARTICLE · CIO'S DESK",
     meta: "",
     title: "Where does gold go from here?",
-    date: "20 January 2026",
+    date: "5 March 2026",
     image:
       "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400&q=75&auto=format&fit=crop",
   },
@@ -110,7 +113,7 @@ const articles = [
     type: "ARTICLE · CIO'S DESK",
     meta: "",
     title: "The GIFT City Advantage",
-    date: "20 January 2026",
+    date: "2 April 2026",
     image:
       "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=400&q=75&auto=format&fit=crop",
   },
@@ -119,100 +122,93 @@ const articles = [
     type: "ARTICLE · CIO'S DESK",
     meta: "",
     title: "Silver: Protecting Gains, Avoiding FOMO",
-    date: "20 January 2026",
+    date: "5-May-26",
     image:
       "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&q=75&auto=format&fit=crop",
   },
 ];
 
 const awardsData = [
-  {
-    year: "2016",
-    title: "Moneycontrol Emerging Wealth Award",
-    brand: "MONEYCONTROL",
-    badge: "🏅",
-    subtitle:
-      "Our journey began with a strong advisory foundation built on trust, consistency, and personalized wealth planning.",
-  },
+ 
   {
     year: "2017",
-    title: "Business Today Advisory Excellence",
-    brand: "BUSINESS TODAY",
-    badge: "🥇",
+    title: "A vision takes route",
+    
+    
     subtitle:
-      "We strengthened our advisory framework and began scaling a more disciplined and refined client experience.",
+      "After two decades in the corporate world, Mr. Dileep Hari stepped forward with purpose — founding EPM Wealth alongside a core team built on trust, expertise, and a shared belief in redefining personal wealth.",
   },
   {
     year: "2018",
-    title: "Bloomberg Wealth Strategy Recognition",
-    brand: "BLOOMBERG",
-    badge: "🏆",
+    title: "Beyond Boundaries",
+   
+  
     subtitle:
-      "This phase reflected our growing focus on structured wealth strategies and high-quality investment planning.",
+      "EPM Wealth widened its horizon — entering the insurance landscape and launching dedicated NRI services, making world-class financial guidance accessible to Indians across the globe.",
   },
   {
     year: "2019",
-    title: "ET Wealth Investment Excellence",
-    brand: "ECONOMIC TIMES",
-    badge: "🎗️",
+    title: "Where Knowledge Meets Strategy",
+    
+
     subtitle:
-      "A landmark year where our investment planning philosophy gained stronger recognition and credibility.",
+      "CFP® Tanish Gupta joined as Director, elevating the firm's advisory depth. Financial literacy emerged as a core vertical — sparking a movement that would reach thousands through more than 500 seminars and webinars across India till now.",
   },
   {
     year: "2020",
-    title: "Financial Express Wealth Leadership Honour",
-    brand: "FINANCIAL EXPRESS",
-    badge: "⭐",
+    title: "Standing Firm When It Mattered Most",
+   
+    
     subtitle:
-      "We adapted with resilience and strengthened our leadership in wealth management through stability and service quality.",
+      "In the midst of a global pandemic, EPM Wealth insured over 2,000 healthcare professionals — and crossed ₹50 Crore in AUM. A year that defined our character.",
   },
   {
     year: "2021",
-    title: "Outlook Money Best Wealth Manager",
-    brand: "OUTLOOK MONEY",
-    badge: "🏅",
+    title: "The Complete Picture",
+   
+
     subtitle:
-      "This year reflected stronger brand credibility, deeper relationships, and a more mature planning ecosystem.",
+      "EPM Wealth completed its wealth management ecosystem, offering clients a full suite of financial products under one roof.",
   },
   {
     year: "2022",
-    title: "Mint Best Wealth Advisory Firm",
-    brand: "MINT",
-    badge: "🥇",
+    title: "Built on Trust, Refined by Experience",
+    
+
     subtitle:
-      "A year of high-impact execution where our planning quality and service depth stood out meaningfully.",
+      "EPM Wealth introduced structured portfolio reviews one of it's own kind system and crossed ₹100 crore in AUM, a landmark milestone.",
   },
   {
     year: "2023",
-    title: "Business Standard Elite Partner",
-    brand: "BUSINESS STANDARD",
-    badge: "🏆",
+    title: "Protecting the Legacy",
+    
+
     subtitle:
-      "We continued to elevate our premium positioning with stronger planning quality and trusted execution.",
+      "EPM Wealth added Estate planning to it's services making sure that the legacy is always protected",
   },
   {
     year: "2024",
-    title: "CNBCTV18 Wealth Excellence Award",
-    brand: "CNBCTV18",
-    badge: "💎",
+    title: "Dubai: Our Second Home",
+   
+  
     subtitle:
-      "This phase reflected operational refinement, stronger outcomes, and a more elevated advisory presence.",
+      "EPM Wealth opened its doors in Dubai — stepping onto the global stage and bringing its trusted wealth philosophy to one of the world's most dynamic financial capitals.",
   },
   {
     year: "2025",
-    title: "ET Best Wealth Management Firms",
-    brand: "ECONOMIC TIMES",
-    badge: "🥇",
+    title: "Global Horizons, Local Wisdom",
+   
+
     subtitle:
-      "A year focused on expansion, operational strength, and the continued pursuit of measurable excellence.",
+      "EPM Wealth expanded its investment universe — adding GIFT City instruments to it's platform giving clients on both sides access to truly global wealth opportunities.",
   },
   {
     year: "2026",
-    title: "Tanish Gupta — Forbes 50 over 50",
-    brand: "FORBES GLOBAL",
-    badge: "🏆",
+    title: "Year of Milestone & Collaboration",
+   
+ 
     subtitle:
-      "A defining milestone showcasing the firm’s sustained excellence, trusted leadership, and premium advisory impact.",
+      "EPM Wealth crossed ₹150 Crore in AUM, a testament to the compounding trust of clients who have grown with us year after year. And collaborated with different unique hedge funds around the world bringing exclusive opportunities to our clients.",
   },
 ];
 
@@ -225,6 +221,7 @@ const galleryImages = [
   "https://epmwealth.com/wp-content/uploads/2023/06/epm-award-2.jpeg",
   "https://epmwealth.com/wp-content/uploads/2023/06/epm-award-1.jpeg",
   "https://epmwealth.com/wp-content/uploads/2023/06/WhatsApp-Image-2023-06-01-at-12.36.49-PM.jpeg",
+  awardsImg,
 ];
 
 const duplicatedGalleryImages = [...galleryImages, ...galleryImages];
@@ -403,7 +400,7 @@ const Home = () => {
   const rafRef = useRef(null);
 
   const [videoEnded, setVideoEnded] = useState(false);
-  const [showTyped, setShowTyped] = useState(false);
+  const [showTyped, setShowTyped] = useState(true);
   const [typedText, setTypedText] = useState("");
   const [socialVisible, setSocialVisible] = useState(false);
 
@@ -441,10 +438,10 @@ const Home = () => {
     }
   }, []);
 
-  const [experience, ref1] = useCountUp(30, 2000, "+");
+  const [experience, ref1] = useCountUp(30, 2000, "+ Years");
   const [clients, ref2] = useCountUp(1000, 2400, "+");
   const [locations, ref3] = useCountUp(2, 1800);
-  const [aum, ref4] = useCountUp(150, 2400, " Cr", "₹");
+  const [aum, ref4] = useCountUp(150, 2400, " Cr +");
 
   const featuredArticle = articles.find((item) => item.featured);
   const bottomArticles = articles.filter((item) => !item.featured);
@@ -494,7 +491,7 @@ const Home = () => {
   }, []);
 
   /* ── Hero container 3D mouse-move tilt (desktop only) ── */
-  useEffect(() => {
+ /* useEffect(() => {
     const container = videoContainerRef.current;
     if (!container) return;
 
@@ -536,7 +533,7 @@ const Home = () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, []);
-
+*/
   useEffect(() => {
     if (window.innerWidth <= 768) return;
     const ctx = gsap.context(() => {
@@ -873,7 +870,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    if (!showTyped) return;
+   
     let cancelled = false;
     let lineIdx = 0;
     let charIdx = 0;
@@ -1134,12 +1131,12 @@ const Home = () => {
                     EXCELLENCE
                   </span>
 
-                  {showTyped && (
+                 {/* {showTyped && (
                     <div className="epm-hero-typed-row">
                       <span className="epm-hero-typed-text">{typedText}</span>
                       <span className="epm-typed-caret" />
                     </div>
-                  )}
+                  )}*/}
 
                   <div
                     className={`epm-hero-inline-social ${videoEnded ? "show" : ""}`}
@@ -1195,7 +1192,7 @@ const Home = () => {
               <div className="epm-stats-grid">
                 <div className="epm-stat-box" ref={ref4}>
                   <h2>{aum}</h2>
-                  <p>AUM</p>
+                  <p>Total Asset Under Management</p>
                 </div>
 
                 <div className="epm-stat-line"></div>
@@ -1227,27 +1224,35 @@ const Home = () => {
             <div className="solutions-left">
               {/* <span className="solutions-label">SOLUTIONS</span> */}
               <h2>Wealth Is More Than Just Money...</h2>
-              <Link to="/contact" className="solutions-link">
+             
+              {showTyped && (
+                    <div className="epm-hero-typed-row">
+                      <span className="epm-hero-typed-text">{typedText}</span>
+                      <span className="epm-typed-caret" />
+                    </div>
+                  )}
+                   <Link to="/contact" className="solutions-link">
                 START THE CONVERSATION <span>→</span>
               </Link>
             </div>
-
+             
             <div className="solutions-right">
               <p>
-                At EPM Wealth Management, wealth advisory goes far beyond simply
-                building a portfolio. Working closely with individuals and
-                corporates over the years, we understand that true wealth
-                management requires a holistic, personalized approach aligned
-                with each client’s unique goals.
+               It all begins with you, At EPM we believe your wealth goes beyond money.
+                We prioritize you, your loved ones, and your business,
+                 ensuring they remain at the heart of our every action.
+                  Our personalized approach helps you achieve your goals today and in the future.
+
               </p>
 
               <p>
-                By combining deep financial insight with modern technology, we
-                design strategies tailored to your evolving financial needs.
-                Your dedicated advisor—supported by an experienced team—guides
-                you through every important decision, ensuring clarity,
-                confidence, and long-term financial growth.
+               By combining deep financial insight with modern technology,
+                we design strategies tailored to your evolving financial needs. 
+                Your dedicated manager—supported by an experienced team—guides you through every important decision, 
+                ensuring clarity, confidence, and long-term financial stability.
+
               </p>
+              
             </div>
           </div>
         </section>
@@ -1256,18 +1261,19 @@ const Home = () => {
           <div className="decision-container">
             <div className="decision-top-row">
               <div className="decision-heading-wrap">
-                {/* <span className="decision-mini-label">SERVICES</span> */}
+                {/*<span className="decision-mini-label">SERVICES</span> */}
                 <h2 className="decision-heading">
-                  Financial Decisions Made Simpler For Every Indian
+                 Financial Decisions Made Simpler
+
                 </h2>
               </div>
 
-              <div className="decision-intro">
-                <p>
+               <div className="decision-intro">
+            <p>
                   Our financial services are tailored to your unique wealth
                   creation journey. Explore bespoke solutions designed for your
                   specific goals.
-                </p>
+                </p> 
               </div>
             </div>
 
@@ -1285,15 +1291,15 @@ const Home = () => {
                   <div className="decision-card-content">
                     <span className="decision-card-meta">{item.meta}</span>
                     <h3>{item.title}</h3>
-                    <p>{item.description}</p>
+                {/*    <p>{item.description}</p> 
 
                     <div className="decision-card-footer">
                       <span className="decision-card-label">
                         EXPLORE SERVICE
                       </span>
                       <span className="decision-card-arrow">→</span>
-                    </div>
-                  </div>
+                    </div>*/}
+                  </div> 
                 </div>
               ))}
             </div>
@@ -1314,54 +1320,36 @@ const Home = () => {
 
                 <p className="vault-description">
                   From experienced partners at the forefront of today&apos;s
-                  financial trends and beyond. Trusted by the top 0.01% of the
-                  country.
+                  financial trends and beyond. 
                 </p>
 
-                <a href="#contact" className="vault-link">
+              {/*  <a href="#contact" className="vault-link">
                   Explore Vault <span>→</span>
-                </a>
+                </a>*/}
 
-                <div className="vault-signup-box">
-                  <h3>Sign up for priority access</h3>
-                  <p>Get our insights delivered straight to your inbox.</p>
-
-                  <form className="vault-form" onSubmit={handleSubscribe}>
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                    />
-                    <button type="submit" disabled={loading}>
-                      {loading ? "SENDING..." : "SUBSCRIBE →"}
-                    </button>
-                  </form>
-
-                  {message && <p className="vault-form-message">{message}</p>}
-                </div>
+              
               </div>
 
               <div className="vault-featured-card">
                 <img
-                  src={featuredArticle.image}
+                  src={stageImg}
                   alt={featuredArticle.title}
                   className="vault-featured-image"
                   width="1200"
                   height="700"
+                
                   loading="lazy"
                   decoding="async"
                 />
                 <div className="vault-featured-overlay"></div>
 
-                <div className="vault-featured-content">
+               {/* <div className="vault-featured-content">
                   <span>
                     {featuredArticle.type} · {featuredArticle.meta}
                   </span>
                   <h3>{featuredArticle.title}</h3>
                   <p>{featuredArticle.desc}</p>
-                </div>
+                </div>*/}
               </div>
             </div>
 
@@ -1388,7 +1376,7 @@ const Home = () => {
                   </div>
 
                   <div className="vault-article-content">
-                    <span className="vault-article-type">{item.type}</span>
+                  {/*<span className="vault-article-type">{item.type}</span>*/}
                     <h4>{item.title}</h4>
                     <p>{item.date}</p>
                   </div>
@@ -1439,10 +1427,10 @@ const Home = () => {
           </div>
 
           <div className="awards-gallery-section">
-            <div className="awards-gallery-head">
+          {/* <div className="awards-gallery-head">
               <span>RECOGNITION GALLERY</span>
               <h4>Moments of Excellence</h4>
-            </div>
+            </div>*/} 
 
             <div className="awards-gallery-marquee">
               <div className="awards-horizontal-scroll-track">
@@ -1456,10 +1444,10 @@ const Home = () => {
                       loading="lazy"
                       decoding="async"
                     />
-                    <div className="awards-gallery-card-overlay">
+                  {/*  <div className="awards-gallery-card-overlay">
                       <span>EPM WEALTH</span>
                       <p>Recognition & Premium Milestones</p>
-                    </div>
+                    </div>*/} 
                   </div>
                 ))}
               </div>
@@ -1524,10 +1512,10 @@ const Home = () => {
             <div
               className="testimonials-luxury-card"
               ref={cardRef}
-              onMouseMove={handleMouseMove}
+             /* onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
               onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
+              onTouchEnd={handleTouchEnd}*/
             >
               <div className="testimonials-card-glow"></div>
               <div className="testimonials-card-noise"></div>
@@ -1592,7 +1580,7 @@ const Home = () => {
         </section>
 
         <section className="sip-luxury-section epm-reveal-section epm-animate epm-overlap-panel">
-          <div className="sip-luxury-container">
+        {/*  <div className="sip-luxury-container">
             <div className="sip-luxury-head">
               <span className="sip-luxury-label">WEALTH PLANNING TOOL</span>
               <h2 className="sip-luxury-title">SIP Calculator</h2>
@@ -1785,7 +1773,7 @@ const Home = () => {
                 </div>
               )}
             </div>
-          </div>
+          </div>*/}
         </section>
       </div>
     </div>

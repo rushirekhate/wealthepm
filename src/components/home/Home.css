@@ -316,12 +316,9 @@ body {
   font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
   font-size: clamp(1rem, 2.4vw, 2.1rem);
   font-weight: 400;
-  color: rgba(255, 248, 220, 0.94);
+  color: #1d2743;
   letter-spacing: 0.07em;
-  text-shadow:
-    0 2px 20px rgba(210, 160, 60, 0.5),
-    0 1px 6px rgba(0, 0, 0, 0.8),
-    0 0 40px rgba(210, 160, 60, 0.25);
+  text-shadow:none;
 }
 
 .epm-typed-caret {
@@ -1831,7 +1828,7 @@ body {
   margin-top: 30px;
   font-size: 0.92rem;
   letter-spacing: 4px;
-  text-transform: uppercase;
+  text-transform: none;
   color: #383532;
   font-weight: 600;
   font-family: "Manrope", sans-serif;
@@ -1938,7 +1935,9 @@ body {
 .solutions-link {
   display: inline-flex;
   align-items: center;
-  margin-left: 50px;
+  animation: blinkText 1.5s ease-in-out infinite;
+ margin-left: 60px;
+ margin-top: 30px;
   gap: 10px;
   font-family: "Manrope", sans-serif;
   font-size: 14px;
@@ -1950,11 +1949,16 @@ body {
     transform 0.3s ease,
     color 0.3s ease;
 }
+@keyframes blinkText {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
 .solutions-link:hover {
   transform: translateX(6px);
   color: #7f5733;
 }
+
 
 .solutions-right {
   padding-top: 18px;
@@ -2127,13 +2131,16 @@ body {
 
 .decision-card-content {
   position: relative;
-  z-index: 4;
-  width: 54%;
+  z-index: 2;
+  width: 100%;
   min-height: 310px;
-  padding: 30px 26px 22px;
+  padding-top: 18%;
+ padding-right: 350px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
+  align-items: center;
+  text-align: center;
 }
 
 .decision-card-meta {
@@ -2215,13 +2222,16 @@ body {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 32px;
-  align-items: stretch;
-  margin-bottom: 34px;
+  align-items: center;
+  margin-bottom: 0;
 }
 
 .vault-left-panel {
   border-radius: 30px;
   padding: 34px 30px;
+  display: flex;
+flex-direction: column;
+justify-content: center;
   background: linear-gradient(180deg, #fffdf9 0%, #f9f4ed 100%);
   border: 1px solid rgba(159, 109, 61, 0.12);
   box-shadow: 0 18px 40px rgba(22, 30, 45, 0.06);
@@ -2339,8 +2349,7 @@ body {
 
 .vault-featured-card {
   position: relative;
-  min-height: 540px;
-  max-height: 540px;
+  
   overflow: hidden;
   border-radius: 30px;
   box-shadow: 0 24px 50px rgba(17, 24, 39, 0.12);
@@ -2360,11 +2369,12 @@ body {
 .vault-featured-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
+  /*background: linear-gradient(
     180deg,
     rgba(10, 15, 24, 0.1) 0%,
     rgba(10, 15, 24, 0.62) 100%
-  );
+  );*/
+  background:none;
 }
 
 .vault-featured-content {
@@ -2405,6 +2415,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+   margin-top: 32px;
 }
 
 .vault-article-card {
@@ -2762,7 +2773,7 @@ body {
 .awards-gallery-card {
   flex: 0 0 270px;
   width: 270px;
-  height: 300px;
+  height: fit-content;
   border-radius: 24px;
   overflow: hidden;
   position: relative;
@@ -7886,5 +7897,8 @@ body {
     animation: none !important;
   }
 }
-
+.solutions-left .epm-hero-typed-row {
+  justify-content: center;
+  text-align: center;
+}
 /* END OF CORE WEB VITALS SAFE PATCH */

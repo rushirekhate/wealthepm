@@ -17,7 +17,8 @@
   background-size: 92px 92px;
   opacity: 0.22;
   pointer-events: none;
-  animation: wcGridFloat 16s linear infinite;
+ /* animation: wcGridFloat 16s linear infinite;*/
+ animation: none;
 }
 
 .wc-hero-glow {
@@ -142,7 +143,9 @@
 
 .wc-hero-title span {
   display: block;
-  animation: wcTitleFloat 6s ease-in-out infinite;
+ /* animation: wcTitleFloat 6s ease-in-out infinite;*/
+ animation:none;
+
 }
 
 .wc-hero-title span:nth-child(2) {

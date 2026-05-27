@@ -110,11 +110,11 @@ const EntrepreneurialInitiative = () => {
   const heroRef = useRef(null);
   const parallaxItemsRef = useRef([]);
 
-  useEffect(() => {
+  /* useEffect(() => {
     const hero = heroRef.current;
     if (!hero) return;
 
-    const handleMouseMove = (e) => {
+   const handleMouseMove = (e) => {
       const rect = hero.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -147,7 +147,7 @@ const EntrepreneurialInitiative = () => {
       hero.removeEventListener("mousemove", handleMouseMove);
       hero.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, []);
+  }, []);*/
 
   return (
     <div className="ei-page">

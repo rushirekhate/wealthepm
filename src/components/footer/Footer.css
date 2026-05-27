@@ -124,7 +124,9 @@
 
 .epm-footer-content {
   display: grid;
-  grid-template-columns: 1.35fr 1fr 1fr;
+  /*grid-template-columns: 1.35fr 1fr 1fr;*/
+  grid-template-columns: 1fr 1fr;
+justify-content: space-between;
   gap: 52px;
   align-items: start;
   width: 100%;
@@ -136,11 +138,17 @@
    LUXURY FOOTER GRID
 ========================================= */
 
-.luxury-footer-grid {
+/*.luxury-footer-grid {
   display: grid;
   grid-template-columns: 1.45fr 0.95fr 1fr 1fr 0.95fr;
   gap: 42px;
   align-items: start;
+}*/
+.luxury-footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 42px;
 }
 
 /* =========================================

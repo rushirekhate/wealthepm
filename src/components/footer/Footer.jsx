@@ -31,7 +31,9 @@ const Footer = () => {
               </div>
 
               <h2 className="luxury-footer-brand-title">
-                <span>EPM</span> Wealth
+                {/*<span>EPM</span> Wealth*/}
+                EXCELSIOR PINNACLE MINDS PVT LTD.
+
               </h2>
 
               <p className="luxury-footer-tagline">INSIGHT WITH INTEGRITY</p>
@@ -49,19 +51,19 @@ const Footer = () => {
               </div>
 
               <div className="luxury-footer-socials">
-                <a href="#" aria-label="Instagram">
+                <a href="https://www.instagram.com/epm_wealth/" aria-label="Instagram">
                   <FaInstagram />
                 </a>
                 <a href="#" aria-label="YouTube">
                   <FaYoutube />
                 </a>
-                <a href="#" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/epm-wealth/" aria-label="LinkedIn">
                   <FaLinkedinIn />
                 </a>
-                <a href="#" aria-label="Facebook">
+                <a href="https://www.facebook.com/epmwealthadvisor" aria-label="Facebook">
                   <FaFacebookF />
                 </a>
-                <a href="#" aria-label="WhatsApp">
+                <a href="https://api.whatsapp.com/send/?phone=919899939333&text&type=phone_number&app_absent=0" aria-label="WhatsApp">
                   <FaWhatsapp />
                 </a>
               </div>
@@ -69,48 +71,51 @@ const Footer = () => {
 
             {/* About */}
             <div className="luxury-footer-column">
-              <h3>ABOUT</h3>
+              {/*  <h3>ABOUT</h3>
               <a href="#">Overview</a>
               <a href="#">Leadership</a>
               <a href="#">Brand Story</a>
-              <a href="#">ESG</a>
+              <a href="#">ESG</a>*/}
+              <h3>Office Address</h3>
+              <a href="#">814, 8th Floor, Wave Silver Tower, Sector-18, Noida, Uttar Pradesh 201301</a>
+               <a href="tel: +9899939333">+91 120 666 2012     |       9899939333</a>
+                <a href="mailto:info@epmwealth.com">info@epmwealth.com     |     bdm@epmwealth.com</a>
+             
             </div>
 
-            {/* Wealth Management */}
+            {/* Wealth Management 
             <div className="luxury-footer-column">
               <h3>WEALTH MANAGEMENT</h3>
               <a href="#">Family Business</a>
               <a href="#">Professionals &amp; CXOs</a>
               <a href="#">Founders &amp; Entrepreneurs</a>
               <a href="#">Women Clients</a>
-            </div>
+            </div>*/}
 
-            {/* Asset Management */}
+            {/* Asset Management 
             <div className="luxury-footer-column">
               <h3>ASSET MANAGEMENT</h3>
               <a href="#">Discretionary PMS</a>
               <a href="#">Fund of Funds</a>
               <a href="#">Smart Beta</a>
               <a href="#">Global Investments</a>
-            </div>
+            </div>*/}
 
             {/* Navigate */}
-            <div className="luxury-footer-column">
+        {/*    <div className="luxury-footer-column">
               <h3>NAVIGATE</h3>
               <a href="#">Vault</a>
               <a href="#">Careers</a>
-              <a href="#">Contact</a>
-              <a href="tel:+919899939333">+919899939333</a>
-              <a href="mailto:info@epmwealth.com">info@epmwealth.com</a>
-            </div>
+             
+            </div>*/}
           </div>
         </div>
       </footer>
 
       <footer className="epm-footer">
-        <div className="epm-footer-top-line"></div>
+      {/*      <div className="epm-footer-top-line"></div>
 
-        <div className="epm-footer-content">
+    <div className="epm-footer-content">
           <div className="epm-footer-column epm-footer-reveal">
             <h3>EPM FINANCIAL &amp; INVESTMENT ADVISORS PVT LTD</h3>
             <p>SEBI Registration No: INA00001811</p>
@@ -131,7 +136,7 @@ const Footer = () => {
             <p>Resolved during the month: Nil</p>
             <p>Pending at end of month: Nil</p>
           </div>
-        </div>
+        </div>*/}
 
         <div className="epm-footer-bottom-line"></div>
 

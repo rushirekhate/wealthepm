@@ -154,7 +154,7 @@ const PortfolioConsultant = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleMouseMove = (e) => {
+{/*/} { const handleMouseMove = (e) => {
     const card = cardRef.current;
     if (!card) return;
 
@@ -179,7 +179,7 @@ const PortfolioConsultant = () => {
         "perspective(1400px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)",
     });
   };
-
+*/}
   return (
     <>
       <section className="pc-hero-section">
@@ -237,8 +237,8 @@ const PortfolioConsultant = () => {
               className="pc-allocation-card"
               ref={cardRef}
               style={cardStyle}
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
+            /*  onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}*/
             >
               <div className="pc-card-shine"></div>
 

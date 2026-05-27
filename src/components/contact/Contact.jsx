@@ -131,7 +131,7 @@ const Contact = () => {
     const hero = heroRef.current;
     const shell = shellRef.current;
 
-    const handleMouseMove = (e) => {
+    /*const handleMouseMove = (e) => {
       if (!hero || !shell || window.innerWidth <= 991) return;
 
       const rect = hero.getBoundingClientRect();
@@ -169,7 +169,7 @@ const Contact = () => {
       hero?.removeEventListener("mouseleave", handleLeave);
       ctx.revert();
     };
-  }, []);
+  }, []);*/
 
   return (
     <section className="legacy-contact-page" ref={pageRef}>
