@@ -3110,7 +3110,7 @@ justify-content: center;
   );
   background-size: 220% 220%;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.95);
 
   text-shadow: none;
   transform-style: preserve-3d;
@@ -5572,9 +5572,12 @@ video {
   }
 
   .vault-featured-card {
-    min-height: 280px;
-    max-height: 320px;
+    min-height: unset;
+    max-height: unset;
+    height: auto;
+    aspect-ratio: 16/9;
   }
+
 
   .vault-form {
     flex-direction: column;
@@ -5610,9 +5613,11 @@ video {
   }
 
   .core-value-letter {
-    font-size: 4.5rem;
-    min-width: 72px;
-    min-height: 72px;
+    font-size: 3rem;
+    min-width: 54px;
+    min-height: 54px;
+    padding: 4px 8px;
+    border-radius: 16px;
   }
 
   /* Testimonials */
@@ -6931,6 +6936,8 @@ body {
   .epm-hero-spacer {
     display: none !important;
     height: 0 !important;
+     margin: 0 !important;      
+    padding: 0 !important;  
   }
 
   .epm-hero-bg-image-wrap {
@@ -7607,7 +7614,7 @@ body {
   height: 100vh !important;
   min-height: 100vh !important;
   flex-shrink: 0 !important;
-  contain: strict; /* fully contained box — never shifts neighbours */
+  contain: strict; 
 }
 
 /* Overlap stack: give it a stacking context but let height be natural */
