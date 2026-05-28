@@ -5206,7 +5206,10 @@ video {
   .solutions-right {
     text-align: center;
   }
-
+.solutions-right {
+  text-align: center;
+  padding: 0 !important;  
+}
   .solutions-link {
     margin-left: 0;
     justify-content: center;
@@ -5299,6 +5302,7 @@ video {
   .testimonials-cards-grid,
   .testimonials-card-grid {
     grid-template-columns: 1fr !important;
+    gap: 15px !important; 
   }
 
   .testimonials-client-image-wrap {
@@ -5569,6 +5573,7 @@ video {
   /* Decision */
   .decision-heading {
     font-size: clamp(1.8rem, 7vw, 2.4rem);
+    white-space: normal;
   }
 
   .decision-card-content {
@@ -5581,10 +5586,10 @@ video {
     font-size: clamp(2rem, 7vw, 2.8rem);
   }
 
-  .vault-featured-card {
-    min-height: 280px;
-    max-height: 320px;
-  }
+ .vault-featured-card {
+  min-height: unset;
+  max-height: unset;
+}
 
   .vault-form {
     flex-direction: column;
