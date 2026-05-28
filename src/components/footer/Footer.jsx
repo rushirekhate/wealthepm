@@ -42,9 +42,9 @@ const Footer = () => {
              {/* <p className="luxury-footer-tagline">INSIGHT WITH INTEGRITY</p>*/}
 
               <p className="luxury-footer-description">
-                AMFI &amp; BSE Registered Wealth Management Firm. Helping
-                India's Most Prominent Families Bridge The Gap Between Their
-                Reality And Their Purpose Since 2011.
+               IRDAI Rgistration Number : _____ | AMFI ARN : _____ |
+               NSE Rgistration Number : _____ BSE Rgistration Number : _____ |
+               MCX Rgistration Number : _____.
               </p>
 
               <div className="luxury-footer-badges">
