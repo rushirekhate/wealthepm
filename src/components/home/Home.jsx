@@ -240,7 +240,7 @@ const coreValuesData = [
     letter: "R",
     title: "RELATIONSHIP",
     description:
-      "We Build Lasting Partnerships Grounded In trust, Transparency, And A Genuine Commitment To Long-Term Success.",
+      "We Build Lasting Relationships Grounded In Trust, Transparency, And A Genuine Commitment To Long-Term Growth.",
     image:
       "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=900&q=80&auto=format&fit=crop",
   },

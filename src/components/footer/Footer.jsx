@@ -90,10 +90,8 @@ const Footer = () => {
               <a href="#">ESG</a>*/}
               <h3>Office Address</h3>
               <a href="#">814, 8th Floor, Wave Silver Tower, Sector-18, Noida, Uttar Pradesh 201301</a>
-               <a href="tel: +9899939333"><FaPhoneAlt /> +91 120 666 2012 </a>
-               <a href="tel: +9899939333"><FaPhoneAlt /> +91 9899939333</a>
-                <a href="mailto:info@epmwealth.com"><FaEnvelope /> Email : info@epmwealth.com  </a>
-                 <a href="mailto: bdm@epmwealth.com">  <FaEnvelope /> Email :  bdm@epmwealth.com</a>
+               <a href="tel: +9899939333"><FaPhoneAlt /> +91 120 666 2012 | +91 9899939333</a>
+                <a href="mailto:info@epmwealth.com"><FaEnvelope /> Email : info@epmwealth.com  |  bdm@epmwealth.com</a>
              
             </div>
 
