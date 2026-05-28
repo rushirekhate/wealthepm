@@ -1,11 +1,14 @@
 import React from "react";
 import "./Footer.css";
+
 import {
   FaInstagram,
   FaYoutube,
   FaLinkedinIn,
   FaFacebookF,
   FaWhatsapp,
+  FaPhoneAlt,
+FaEnvelope,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -36,12 +39,12 @@ const Footer = () => {
 
               </h2>
 
-              <p className="luxury-footer-tagline">INSIGHT WITH INTEGRITY</p>
+             {/* <p className="luxury-footer-tagline">INSIGHT WITH INTEGRITY</p>*/}
 
               <p className="luxury-footer-description">
-                AMFI &amp; BSE registered wealth management firm. Helping
-                India's most prominent families bridge the gap between their
-                reality and their purpose since 2011.
+                AMFI &amp; BSE Registered Wealth Management Firm. Helping
+                India's Most Prominent Families Bridge The Gap Between Their
+                Reality And Their Purpose Since 2011.
               </p>
 
               <div className="luxury-footer-badges">
@@ -69,6 +72,15 @@ const Footer = () => {
               </div>
             </div>
 
+
+            <div className="luxury-footer-column">
+              <h3>Contact Us</h3>
+              <a href="https://www.instagram.com/epm_wealth/"><FaInstagram /> Instagram</a>
+              <a href="https://www.facebook.com/epmwealthadvisor"><FaFacebookF /> Facebook</a>
+              <a href="https://www.linkedin.com/company/epm-wealth/"><FaLinkedinIn /> Linkedin</a>
+              <a href="https://wa.me/919899939333" target="_blank" rel="noreferrer"><FaWhatsapp /> Whatsapp</a>
+            </div>
+
             {/* About */}
             <div className="luxury-footer-column">
               {/*  <h3>ABOUT</h3>
@@ -78,8 +90,10 @@ const Footer = () => {
               <a href="#">ESG</a>*/}
               <h3>Office Address</h3>
               <a href="#">814, 8th Floor, Wave Silver Tower, Sector-18, Noida, Uttar Pradesh 201301</a>
-               <a href="tel: +9899939333">+91 120 666 2012     |       9899939333</a>
-                <a href="mailto:info@epmwealth.com">info@epmwealth.com     |     bdm@epmwealth.com</a>
+               <a href="tel: +9899939333"><FaPhoneAlt /> +91 120 666 2012 </a>
+               <a href="tel: +9899939333"><FaPhoneAlt /> +91 9899939333</a>
+                <a href="mailto:info@epmwealth.com"><FaEnvelope /> Email : info@epmwealth.com  </a>
+                 <a href="mailto: bdm@epmwealth.com">  <FaEnvelope /> Email :  bdm@epmwealth.com</a>
              
             </div>
 

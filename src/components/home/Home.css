@@ -1879,6 +1879,7 @@ body {
    SOLUTIONS
 ========================= */
 .solutions-section {
+  position: relative;
   width: 100%;
   background: #ffffff;
   padding: 70px 20px 95px;
@@ -2015,6 +2016,7 @@ body {
 
 .decision-heading {
   margin: 0;
+  white-space: nowrap;
   font-size: clamp(2.2rem, 4.8vw, 4rem);
   line-height: 1.05;
   font-weight: 500;
@@ -7910,4 +7912,34 @@ body {
   justify-content: center;
   text-align: center;
 }
+
+.cta-floating-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: -78px;
+  margin-left: 420px;
+  position: relative;
+  z-index: 100;
+}
+.cta-floating-btn {
+  background: linear-gradient(135deg, #a15b19 0%, #c47a35 100%);
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  padding: 18px 48px;
+  border-radius: 2px;
+  text-decoration: none;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25), 0 8px 32px rgba(161, 91, 25, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-floating-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(161, 91, 25, 0.5);
+}
+
+
+
 /* END OF CORE WEB VITALS SAFE PATCH */

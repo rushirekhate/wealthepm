@@ -132,11 +132,11 @@ const awardsData = [
  
   {
     year: "2017",
-    title: "A vision takes route",
+    title: "A Vision Takes Route",
     
     
     subtitle:
-      "After two decades in the corporate world, Mr. Dileep Hari stepped forward with purpose — founding EPM Wealth alongside a core team built on trust, expertise, and a shared belief in redefining personal wealth.",
+      "After Two Decades In The Corporate World, Mr. Dileep Hari Stepped Forward With Purpose — Founding EPM Wealth Alongside A Core Team Built On Trust, Expertise, And A Shared Belief In Redefining Personal Wealth.",
   },
   {
     year: "2018",
@@ -144,7 +144,7 @@ const awardsData = [
    
   
     subtitle:
-      "EPM Wealth widened its horizon — entering the insurance landscape and launching dedicated NRI services, making world-class financial guidance accessible to Indians across the globe.",
+      "EPM Wealth Widened Its Horizon — Entering The Insurance Landscape And Launching Dedicated NRI Services, Making World-Class Financial Guidance Accessible To Indians Across The Globe.",
   },
   {
     year: "2019",
@@ -152,7 +152,7 @@ const awardsData = [
     
 
     subtitle:
-      "CFP® Tanish Gupta joined as Director, elevating the firm's advisory depth. Financial literacy emerged as a core vertical — sparking a movement that would reach thousands through more than 500 seminars and webinars across India till now.",
+      "CFP® Tanish Gupta Joined As Director, Elevating The Firm's Advisory Depth. Financial Literacy Emerged As A Core Vertical — Sparking A Movement That Would Reach Thousands Through More Than 500 Seminars And Webinars Across India Till Now.",
   },
   {
     year: "2020",
@@ -160,7 +160,7 @@ const awardsData = [
    
     
     subtitle:
-      "In the midst of a global pandemic, EPM Wealth insured over 2,000 healthcare professionals — and crossed ₹50 Crore in AUM. A year that defined our character.",
+      "In The Midst Of A Global Pandemic, EPM Wealth Insured Over 2,000 Healthcare Professionals — And Crossed ₹50 Crore In AUM. A Year That Defined Our Character.",
   },
   {
     year: "2021",
@@ -168,23 +168,23 @@ const awardsData = [
    
 
     subtitle:
-      "EPM Wealth completed its wealth management ecosystem, offering clients a full suite of financial products under one roof.",
+      "EPM Wealth Completed Its Wealth Management Ecosystem, Offering Clients A Full Suite Of Financial Products Under One Roof.",
   },
   {
     year: "2022",
-    title: "Built on Trust, Refined by Experience",
+    title: "Built On Trust, Refined By Experience",
     
 
     subtitle:
-      "EPM Wealth introduced structured portfolio reviews one of it's own kind system and crossed ₹100 crore in AUM, a landmark milestone.",
+      "EPM Wealth Introduced Structured Portfolio Reviews One Of It's Own Kind System And Crossed ₹100 Crore In AUM, A Landmark Milestone.",
   },
   {
     year: "2023",
-    title: "Protecting the Legacy",
+    title: "Protecting The Legacy",
     
 
     subtitle:
-      "EPM Wealth added Estate planning to it's services making sure that the legacy is always protected",
+      "EPM Wealth Added Estate Planning To It's Services Making Sure That The Legacy Is Always Protected",
   },
   {
     year: "2024",
@@ -192,7 +192,7 @@ const awardsData = [
    
   
     subtitle:
-      "EPM Wealth opened its doors in Dubai — stepping onto the global stage and bringing its trusted wealth philosophy to one of the world's most dynamic financial capitals.",
+      "EPM Wealth Opened Its Doors In Dubai — Stepping Onto The Global Stage And Bringing Its Trusted Wealth Philosophy To One Of The World's Most Dynamic Financial Capitals.",
   },
   {
     year: "2025",
@@ -200,7 +200,7 @@ const awardsData = [
    
 
     subtitle:
-      "EPM Wealth expanded its investment universe — adding GIFT City instruments to it's platform giving clients on both sides access to truly global wealth opportunities.",
+      "EPM Wealth Expanded Its Investment Universe — Adding GIFT City Instruments To It's Platform Giving Clients On Both Sides Access To Truly Global Wealth Opportunities.",
   },
   {
     year: "2026",
@@ -208,7 +208,7 @@ const awardsData = [
    
  
     subtitle:
-      "EPM Wealth crossed ₹150 Crore in AUM, a testament to the compounding trust of clients who have grown with us year after year. And collaborated with different unique hedge funds around the world bringing exclusive opportunities to our clients.",
+      "EPM Wealth Crossed ₹150 Crore In AUM, A Testament To The Compounding Trust Of Clients Who Have Grown With Us Year After year. And Collaborated With Different Unique Hedge Funds Around The World Bringing Exclusive Opportunities To Our Clients.",
   },
 ];
 
@@ -227,7 +227,7 @@ const galleryImages = [
 const duplicatedGalleryImages = [...galleryImages, ...galleryImages];
 
 const TYPED_LINES = [
-  "It all begins with you.",
+  "It All Begins With You.",
   "Attaining Financial Freedom.",
   "Making Your Money Work For You.",
   "Saving Taxes.",
@@ -240,7 +240,7 @@ const coreValuesData = [
     letter: "R",
     title: "RELATIONSHIP",
     description:
-      "We build lasting partnerships grounded in trust, transparency, and a genuine commitment to long-term success.",
+      "We Build Lasting Partnerships Grounded In trust, Transparency, And A Genuine Commitment To Long-Term Success.",
     image:
       "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=900&q=80&auto=format&fit=crop",
   },
@@ -249,7 +249,7 @@ const coreValuesData = [
     letter: "I",
     title: "INTEGRITY",
     description:
-      "Every recommendation is unbiased and fully aligned with the client's interest. Complete transparency, always.",
+      "Every Recommendation Is Unbiased And Fully Aligned With The Client's Interest. Complete Transparency, Always.",
     image:
       "https://i.pinimg.com/1200x/44/0c/94/440c94130b3a3043b5074d057ef4ada6.jpg",
   },
@@ -258,7 +258,7 @@ const coreValuesData = [
     letter: "S",
     title: "SIMPLICITY",
     description:
-      "We distil the complex world of finance into clear, actionable insights. Clarity over complexity, always.",
+      "We Distil The Complex World Of Finance Into Clear, Actionable Insights. Clarity Over Complexity, Always.",
     image:
       "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=900&q=80&auto=format&fit=crop",
   },
@@ -267,7 +267,7 @@ const coreValuesData = [
     letter: "K",
     title: "KNOWLEDGE",
     description:
-      "Deep expertise across asset classes, geographies, and generations drives our advice and research.",
+      "Deep Expertise Across Asset Classes, Geographies, And Generations Drives Our Advice And Research.",
     image:
       "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=900&q=80&auto=format&fit=crop",
   },
@@ -281,7 +281,7 @@ const testimonialsData = [
     image:
       "https://epmwealth.com/wp-content/uploads/2023/05/Jitender-Singh.jpg",
     quote:
-      "One stop solution for all my family's financial needs . I am really happy with their service and would recommend them",
+      "One Stop Solution For All My Family's Financial Needs . I Am Really Happy With Their Service And Would Recommend Them",
   },
   {
     id: 2,
@@ -289,7 +289,7 @@ const testimonialsData = [
     role: "Chartered Accountant",
     image: "https://epmwealth.com/wp-content/uploads/2023/05/Amit-Aggarwal.jpg",
     quote:
-      "It's nice to have one place to come to, without being too large or institutional. I feel like you know the whole picture under one roof .It's Peace of mind with EPM Wealth.",
+      "It's Nice To Have One Place To Come To, Without Being Too Large Or Institutional. I Feel Like You Know The Whole Picture Under One Roof .It's Peace Of Mind With EPM Wealth.",
   },
   {
     id: 3,
@@ -298,7 +298,7 @@ const testimonialsData = [
     image:
       "https://epmwealth.com/wp-content/uploads/2023/05/Garvita-Sadhwani.jpg",
     quote:
-      "For me, investing was a dream, but also a phobia. EPM Wealth team is very co-operative and has done an excellent job of transforming my investment mindset.",
+      "For Me, Investing Was A Dream, But Also A Phobia. EPM Wealth Team Is Very Co-Operative And Has Done An Excellent Job Of Transforming My Investment Mindset.",
   },
   {
     id: 4,
@@ -307,7 +307,7 @@ const testimonialsData = [
     image:
       "https://epmwealth.com/wp-content/uploads/2023/05/Jaideep-Dudani.jpg",
     quote:
-      "It's been a pleasure to deal with EPM team. Financial knowledge, attention to detail and communication are amazing. I've recommended EPM Wealth to family members who are now also happy clients.",
+      "It's Been A Pleasure To Deal With EPM Team. Financial Knowledge, Attention To Detail And Communication Are Amazing. I've Recommended EPM Wealth To Family Members Who Are Now Also Happy Clients.",
   },
   {
     id: 5,
@@ -316,7 +316,7 @@ const testimonialsData = [
     image:
       "https://epmwealth.com/wp-content/uploads/2023/05/Shantanu-Gupta.jpg",
     quote:
-      " I am grateful to have EPM WEALTH as my financial advisor . Their services have always been exceptional in every way",
+      " I Am Grateful To Have EPM WEALTH As My Financial Advisor . Their Services Have Always Been Exceptional In Every Way",
   },
   {
     id: 6,
@@ -325,16 +325,16 @@ const testimonialsData = [
     image:
       "https://epmwealth.com/wp-content/uploads/2023/05/Himanshu-Verma.jpg",
     quote:
-      "It is such a relief to have someone you can trust completely looking after your portfolio. Their advice has always been beneficial to us and we would definitely recommend them to everyone.",
+      "It Is Such A Relief To Have Someone You Can Trust Completely Looking After Your Portfolio. Their Advice Has Always Been Beneficial To Us And We Would Definitely Recommend Them To Everyone.",
   },
   {
     id: 7,
     name: "Akash Chaudhary",
-    role: "Ace fitness trainer",
+    role: "Ace Fitness Trainer",
     image:
       "https://epmwealth.com/wp-content/uploads/2023/05/Aakash-Chadhary.jpg",
     quote:
-      "My financial education was O when I first met the EPM Wealth team. They have been very helpful in educating me and managing my finances.",
+      "My financial Education Was O When I First Met The EPM Wealth team. They Have Been Very Helpful In Educating Me and Managing My Finances.",
   },
 ];
 
@@ -1231,9 +1231,9 @@ const Home = () => {
                       <span className="epm-typed-caret" />
                     </div>
                   )}
-                   <Link to="/contact" className="solutions-link">
+                {/*   <Link to="/contact" className="solutions-link">
                 START THE CONVERSATION <span>→</span>
-              </Link>
+              </Link>*/}
             </div>
              
             <div className="solutions-right">
@@ -1256,7 +1256,11 @@ const Home = () => {
             </div>
           </div>
         </section>
-
+              <div className="cta-floating-wrapper">
+            <Link to="/contact" className="cta-floating-btn">
+              START THE CONVERSATION →
+            </Link>
+          </div>
         <section className="decision-section epm-reveal-section epm-animate epm-overlap-panel">
           <div className="decision-container">
             <div className="decision-top-row">
@@ -1268,13 +1272,13 @@ const Home = () => {
                 </h2>
               </div>
 
-               <div className="decision-intro">
+           {/*    <div className="decision-intro">
             <p>
                   Our financial services are tailored to your unique wealth
                   creation journey. Explore bespoke solutions designed for your
                   specific goals.
                 </p> 
-              </div>
+              </div> */}
             </div>
 
             <div className="decision-grid">
@@ -1313,14 +1317,14 @@ const Home = () => {
                 {/* <span className="vault-label">VAULT</span> */}
 
                 <h2 className="vault-heading">
-                  Your access to
+                  Your Access To
                   <br />
-                  rich insights
+                  Rich Insights
                 </h2>
 
                 <p className="vault-description">
-                  From experienced partners at the forefront of today&apos;s
-                  financial trends and beyond. 
+                  From Experienced Partners At The Forefront Of Today&apos;s
+                  Financial Trends And Beyond. 
                 </p>
 
               {/*  <a href="#contact" className="vault-link">
@@ -1396,7 +1400,7 @@ const Home = () => {
               {/* <span className="awards-mini-label">AWARDS & MILESTONES</span> */}
 
               <h2 className="awards-main-heading">
-                Journey driven by
+                Journey Driven By
                 <br />
                 Results
               </h2>
@@ -1460,7 +1464,7 @@ const Home = () => {
             <div className="core-values-top">
               <div className="core-values-top-left">
                 <span className="core-values-label">CORE VALUES</span>
-                <h2 className="core-values-heading">We believe in RISK</h2>
+                <h2 className="core-values-heading">We Believe In RISK</h2>
               </div>
             </div>
 
