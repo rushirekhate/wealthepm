@@ -7907,10 +7907,15 @@ body {
     animation: none !important;
   }
 }
-.solutions-left .epm-hero-typed-row {
+/*.solutions-left .epm-hero-typed-row {
    margin-top: 32px;
   justify-content: center;
   text-align: center;
+}*/
+.solutions-left .epm-hero-typed-row {
+  justify-content: flex-start;
+  
+ 
 }
 
 .cta-floating-wrapper {
