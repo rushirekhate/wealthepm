@@ -3120,7 +3120,7 @@ justify-content: center;
   );
   background-size: 220% 220%;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+ -webkit-text-fill-color: rgba(255, 255, 255, 0.95);
 
   text-shadow: none;
   transform-style: preserve-3d;
@@ -3198,8 +3198,8 @@ justify-content: center;
 }
 
 .core-value-content {
-  min-height: 180px;
-  padding: 26px 22px 28px;
+   min-height: unset;
+  padding: 20px 22px 22px;
   background: linear-gradient(180deg, #ffffff 0%, #fbf7f0 100%);
   position: relative;
   z-index: 2;
